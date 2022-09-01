@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 function LoginBox() {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const validation = (id, pw) => {
+    if (id.length < 1 || pw.length < 8) {
+      return false;
+    }
+    return true;
+  };
+  const valid = validation(id, pw);
+
+  const navigate = useNavigate();
+
   return (
     <LoginContainer>
       <h1>Justgram</h1>
       <LoginInfoBox>
         <LoginInfo>
-          <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-          <input type="password" placeholder="비밀번호" />
-          <button>
+          <input
+            type="text"
+            placeholder="전화번호, 사용자 이름 또는 이메일"
+            value={id}
+            onChange={e => {
+              setId(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="비밀번호"
+            value={pw}
+            onChange={e => {
+              setPw(e.target.value);
+            }}
+          />
+          <button
+            className={valid ? 'active' : 'inactive'}
+            disabled={!valid}
+            onClick={() => {
+              navigate('/');
+            }}
+          >
             <div>로그인</div>
           </button>
           <Another>
@@ -69,6 +103,7 @@ const LoginInfo = styled.div`
     border-radius: 3px;
     width: 268px;
   }
+
   button {
     margin: 8px 40px 6px;
     padding: 5px 9px;
@@ -76,7 +111,10 @@ const LoginInfo = styled.div`
     width: 287px;
     border: none;
     border-radius: 3px;
-    cursor: pointer;
+    &.active {
+      cursor: pointer;
+      background-color: #0095f6;
+    }
     div {
       color: white;
       font-size: 15px;
