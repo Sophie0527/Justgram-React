@@ -1,12 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function FeedReview() {
+function FeedReview(props) {
+  const { review, setReview, setRegisterReview } = props;
+
+  const validation = review => {
+    if (review.length < 1) {
+      return false;
+    }
+    return true;
+  };
+  const valid = validation(review);
+
+  const writeReview = () => {
+    setRegisterReview(prev => {
+      return [...prev, review];
+    });
+    setReview('');
+  };
+
   return (
-    <Container>
-      <input placeholder="댓글 달기..."></input>
-      <button>게시</button>
-    </Container>
+    <>
+      <Container>
+        <input
+          placeholder="댓글 달기..."
+          type="text"
+          value={review}
+          onChange={e => {
+            setReview(e.target.value);
+          }}
+          onKeyPress={writeReview}
+        ></input>
+        <button
+          className={valid ? 'active' : 'inactive'}
+          disabled={!valid}
+          onClick={writeReview}
+        >
+          게시
+        </button>
+      </Container>
+    </>
   );
 }
 
@@ -20,7 +53,9 @@ const Container = styled.div`
     padding-left: 27px;
     font-size: 16px;
     font-weight: 450;
+    width: 500px;
     border: none;
+    outline: none;
   }
   button {
     border: none;
@@ -29,6 +64,10 @@ const Container = styled.div`
     font-size: 16px;
     font-weight: 450;
     color: #c0dffd;
+    &.active {
+      cursor: pointer;
+      color: #0095f6;
+    }
   }
 `;
 

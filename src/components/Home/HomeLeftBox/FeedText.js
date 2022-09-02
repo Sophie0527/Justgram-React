@@ -1,18 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faBookmark } from '@fortawesome/free-regular-svg-icons';
-import { faMessage } from '@fortawesome/free-regular-svg-icons';
-import { faCircleDown } from '@fortawesome/free-regular-svg-icons';
+import { faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHeart,
+  faBookmark,
+  faMessage,
+  faCircleDown,
+} from '@fortawesome/free-regular-svg-icons';
 
-function FeedText() {
+function FeedText(props) {
+  const { registerReview, setRegisterReview } = props;
+  const [like, setLike] = useState(false);
+
+  // const isLiked = () => {
+  //   if (!like) {
+  //     setLike(true);
+  //   } else {
+  //     setLike(false);
+  //   }
+  // };
+
+  const isLiked = () => {
+    setLike(!like);
+  };
+
   return (
     <Container>
       <IconBox>
         <div>
-          <FontAwesomeIcon icon={faHeart} alt="하트" />
+          <FontAwesomeIcon
+            color={like ? 'tomato' : 'black'}
+            icon={like ? faHeartCircleCheck : faHeart}
+            alt="하트"
+            onClick={() => {
+              isLiked();
+            }}
+          />
           <FontAwesomeIcon icon={faMessage} alt="메세지" />
           <FontAwesomeIcon icon={faCircleDown} alt="저장" />
         </div>
@@ -30,13 +54,51 @@ function FeedText() {
         <p>오늘은 미술관 가는 날...</p>
         <button>더 보기</button>
       </FeedContents>
+
       <ReviewContents>
         <div>
           <span>Ted_88</span>
           <p>거봐 좋았잖아~~~~🫶</p>
         </div>
-        <FontAwesomeIcon icon={faHeart} alt="하트" />
+        <FontAwesomeIcon
+          color={like ? 'tomato' : 'lightgray'}
+          icon={like ? faHeartCircleCheck : faHeart}
+          alt="하트"
+          onClick={() => {
+            isLiked();
+          }}
+        />
       </ReviewContents>
+
+      {registerReview.map((registerReview, review, index) => {
+        return (
+          <ReviewContents key={registerReview.index}>
+            <div>
+              <span>Justcode_bootcamp</span>
+              <p>{registerReview}</p>
+            </div>
+            <div>
+              <Delete
+                onClick={() => {
+                  setRegisterReview([]);
+                }}
+              >
+                삭제
+              </Delete>
+              <FontAwesomeIcon
+                color={like ? 'tomato' : 'lightgray'}
+                icon={like ? faHeartCircleCheck : faHeart}
+                alt="하트"
+                onClick={() => {
+                  isLiked();
+                  console.log(registerReview);
+                }}
+              />
+            </div>
+          </ReviewContents>
+        );
+      })}
+
       <Time>42분 전</Time>
     </Container>
   );
@@ -62,12 +124,14 @@ const IconBox = styled.div`
       width: 20px;
       height: 20px;
       margin-right: -8px;
+      cursor: pointer;
     }
   }
   svg {
     width: 20px;
     height: 20px;
     margin: 0 20px;
+    cursor: pointer;
   }
 `;
 
@@ -133,8 +197,15 @@ const ReviewContents = styled.div`
   }
   svg {
     width: 14px;
-    color: #a0a0a0;
+    cursor: pointer;
   }
+`;
+
+const Delete = styled.p`
+  padding-right: 7px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #0095f6;
 `;
 
 const Time = styled.span`

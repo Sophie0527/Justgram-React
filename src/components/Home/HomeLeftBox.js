@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import FeedHeader from './HomeLeftBox/FeedHeader';
 import FeedText from './HomeLeftBox/FeedText';
 import FeedReview from './HomeLeftBox/FeedReview';
 
 function HomeLeftBox() {
+  const [review, setReview] = useState('');
+  const [registerReview, setRegisterReview] = useState([]);
   return (
     <Container>
       <Feeds>
@@ -13,8 +15,15 @@ function HomeLeftBox() {
           alt="피드이미지"
           src="https://cdn.pixabay.com/photo/2016/11/22/19/10/architecture-1850092_1280.jpg"
         ></FeedImage>
-        <FeedText />
-        <FeedReview />
+        <FeedText
+          registerReview={registerReview}
+          setRegisterReview={setRegisterReview}
+        />
+        <FeedReview
+          review={review}
+          setReview={setReview}
+          setRegisterReview={setRegisterReview}
+        />
       </Feeds>
     </Container>
   );
