@@ -12,11 +12,7 @@ function Home() {
       <Container>
         <HomeBox>
           <HomeLeftBox />
-
           <HomeRightBox />
-          {/* <div>Home2-1</div>
-            <div>Home2-2</div>
-          </HomeRightBox> */}
         </HomeBox>
       </Container>
       <Footer />
@@ -35,17 +31,8 @@ const Container = styled.div`
 const HomeBox = styled.div`
   margin-top: 60px;
   padding-top: 60px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   display: flex;
   justify-content: center;
 `;
-
-// const HomeRightBox = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// `;
 
 export default Home;

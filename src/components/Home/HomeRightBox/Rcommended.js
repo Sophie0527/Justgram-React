@@ -8,40 +8,41 @@ function Rcommended() {
         <span>회원님을 위한 추천</span>
         <p>모두보기</p>
       </RcommendedBoxHeader>
-
-      <RcommendedBoxInfo>
-        <img
-          alt="추천프로필"
-          src="https://photo-cdn2.icons8.com/LqNg9jtI8PjfmQU8ZHl_pBwx8yxeESbTpmbePrbUQKA/rs:fit:1608:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvMTc2LzExMDU1/ZDZlLTQyMWItNGM3/ZC04YjczLWRiZWM0/ZmFiYmFhMS5qcGc.jpg"
-        ></img>
-        <div>
-          <span>unnie_s_2022</span>
-          <p>회원님을 팔로우합니다</p>
-        </div>
-        <button>팔로우</button>
-      </RcommendedBoxInfo>
-      <RcommendedBoxInfo>
-        <img
-          alt="추천프로필"
-          src="https://photo-cdn2.icons8.com/CY-anxzK_EfsUIvPlYT9PSnb7rxEcVHJ8YBquZTbbdI/rs:fit:1606:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTI0L2Y5ZTc5/ODgxLTNmZDQtNDVm/Ni05YTRlLTczMzhk/MmQ4OTc4MS5qcGc.jpg"
-        ></img>
-        <div>
-          <span>mizineee</span>
-          <p>Ted_88님 외 2명이 팔로우합니다</p>
-        </div>
-        <button>팔로우</button>
-      </RcommendedBoxInfo>
-      <RcommendedBoxInfo>
-        <img
-          alt="추천프로필"
-          src="https://photo-cdn2.icons8.com/XdKmZyDnJVDgF4L5VIVkHfjzO1y0geJOYGm343_vgXk/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvODk1L2RmOWYw/OWE5LTQwZDMtNDkz/ZS1hMzI5LWUyY2Jh/ZTViNDA4ZC5qcGc.jpg"
-        ></img>
-        <div>
-          <span>jeong</span>
-          <p>__yum_s님이 팔로우합니다</p>
-        </div>
-        <button>팔로우</button>
-      </RcommendedBoxInfo>
+      <RcommendedBoxInfoWrap>
+        <RcommendedBoxInfo>
+          <img
+            alt="추천프로필"
+            src="https://photo-cdn2.icons8.com/LqNg9jtI8PjfmQU8ZHl_pBwx8yxeESbTpmbePrbUQKA/rs:fit:1608:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvMTc2LzExMDU1/ZDZlLTQyMWItNGM3/ZC04YjczLWRiZWM0/ZmFiYmFhMS5qcGc.jpg"
+          ></img>
+          <div>
+            <span>unnie_s_2022</span>
+            <p>회원님을 팔로우합니다</p>
+          </div>
+          <button>팔로우</button>
+        </RcommendedBoxInfo>
+        <RcommendedBoxInfo>
+          <img
+            alt="추천프로필"
+            src="https://photo-cdn2.icons8.com/CY-anxzK_EfsUIvPlYT9PSnb7rxEcVHJ8YBquZTbbdI/rs:fit:1606:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTI0L2Y5ZTc5/ODgxLTNmZDQtNDVm/Ni05YTRlLTczMzhk/MmQ4OTc4MS5qcGc.jpg"
+          ></img>
+          <div>
+            <span>mizineee</span>
+            <p>Ted_88님 외 2명이 팔로우합니다</p>
+          </div>
+          <button>팔로우</button>
+        </RcommendedBoxInfo>
+        <RcommendedBoxInfo>
+          <img
+            alt="추천프로필"
+            src="https://photo-cdn2.icons8.com/XdKmZyDnJVDgF4L5VIVkHfjzO1y0geJOYGm343_vgXk/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvODk1L2RmOWYw/OWE5LTQwZDMtNDkz/ZS1hMzI5LWUyY2Jh/ZTViNDA4ZC5qcGc.jpg"
+          ></img>
+          <div>
+            <span>jeong</span>
+            <p>__yum_s님이 팔로우합니다</p>
+          </div>
+          <button>팔로우</button>
+        </RcommendedBoxInfo>
+      </RcommendedBoxInfoWrap>
     </Container>
   );
 }
@@ -55,6 +56,9 @@ const Container = styled.div`
   border-radius: 3px;
   padding: 13px 13px;
   max-height: 200px;
+`;
+
+const RcommendedBoxInfoWrap = styled.div`
   overflow: scroll;
   overflow: auto;
   white-space: nowrap;
@@ -66,6 +70,7 @@ const RcommendedBoxHeader = styled.div`
   align-items: center;
   width: 100%;
   padding-bottom: 10px;
+
   span {
     font-size: 15px;
     font-weight: 450;
