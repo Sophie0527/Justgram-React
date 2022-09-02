@@ -10,33 +10,39 @@ function HomeRightBox() {
       </StoryBoxHeader>
       <StoryBoxInfoWrap>
         <StoryBoxInfo>
-          <img
-            alt="스토리프로필"
-            src="https://photo-cdn2.icons8.com/f_TnFr-C592GoK7BkQ7fNREtTbjj_O73NWzOjlSCHfg/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTkxLzZhYmQw/ZTk3LTliOGItNGM5/Mi05ZGI4LTcxMmQ1/MjNlYTFlOS5qcGc.jpg"
-          ></img>
+          <StoryprofileBox>
+            <img
+              alt="스토리프로필"
+              src="https://photo-cdn2.icons8.com/f_TnFr-C592GoK7BkQ7fNREtTbjj_O73NWzOjlSCHfg/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTkxLzZhYmQw/ZTk3LTliOGItNGM5/Mi05ZGI4LTcxMmQ1/MjNlYTFlOS5qcGc.jpg"
+            ></img>
+          </StoryprofileBox>
           <div>
             <span>__yum_s</span>
             <p>16분 전</p>
           </div>
         </StoryBoxInfo>
         <StoryBoxInfo>
-          <img
-            alt="스토리프로필"
-            src="https://photo-cdn2.icons8.com/KQG1tldVmhm7k1T2FRi1KCXBzBwEe_fhtw4VETFPZRM/rs:fit:714:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNDg2LzBjNjY0/OGIwLTc5NTgtNDU0/My05YjI2LWQ4ODE3/M2RjMTlmZS5qcGc.jpg"
-          ></img>
+          <StoryprofileBox>
+            <img
+              alt="스토리프로필"
+              src="https://photo-cdn2.icons8.com/KQG1tldVmhm7k1T2FRi1KCXBzBwEe_fhtw4VETFPZRM/rs:fit:714:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNDg2LzBjNjY0/OGIwLTc5NTgtNDU0/My05YjI2LWQ4ODE3/M2RjMTlmZS5qcGc.jpg"
+            ></img>
+          </StoryprofileBox>
           <div>
             <span>Ted_88</span>
             <p>3시간 전</p>
           </div>
         </StoryBoxInfo>
         <StoryBoxInfo>
-          <img
-            alt="스토리프로필"
-            src="https://photo-cdn2.icons8.com/JAOB9Wk8oxFyaOXN6HsJuAByNyJ3mSkuAEP7lp0mPx0/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTg2L2MzMjA1/NWQxLWVjMWEtNDk1/NS1iN2Q0LTMxODBi/ZGUxNzdhZi5qcGc.jpg"
-          ></img>
+          <StoryprofileBox>
+            <img
+              alt="스토리프로필"
+              src="https://photo-cdn2.icons8.com/JAOB9Wk8oxFyaOXN6HsJuAByNyJ3mSkuAEP7lp0mPx0/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTg2L2MzMjA1/NWQxLWVjMWEtNDk1/NS1iN2Q0LTMxODBi/ZGUxNzdhZi5qcGc.jpg"
+            ></img>
+          </StoryprofileBox>
           <div>
             <span>mat.eat.zzi</span>
-            <p>16분 전</p>
+            <p>20시간 전</p>
           </div>
         </StoryBoxInfo>
       </StoryBoxInfoWrap>
@@ -83,17 +89,8 @@ const StoryBoxInfo = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
-  width: 100%;
-  img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid #dbdbdb;
-    margin: 5px 5px 5px 0;
-  }
+  width: 320px;
   div {
-    width: 250px;
     span {
       font-size: 15px;
       font-weight: 500;
@@ -103,6 +100,27 @@ const StoryBoxInfo = styled.div`
       color: #a0a0a0;
       padding-top: 5px;
     }
+  }
+`;
+
+const StoryprofileBox = styled.div`
+  border: 4px solid transparent;
+  border-radius: 50px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, red 0%, orange 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin: 5px;
+  border-image-slice: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 4px 4px 4px 4px;
   }
 `;
 
