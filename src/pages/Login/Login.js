@@ -2,17 +2,19 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import LoginBox from '../../components/Login/LoginBox';
 import LoginBottomBox from '../../components/Login/LoginBottomBox';
-import LoginFooter from '../../components/Login/LoginFooter';
+import Footer from '../../components/Footer/Footer';
 
 function Login() {
   return (
-    <Container>
-      <Article>
-        <LoginBox FlexCenter={FlexCenter} />
-        <LoginBottomBox />
-      </Article>
-      <LoginFooter />
-    </Container>
+    <>
+      <Container>
+        <Article>
+          <LoginBox FlexCenter={FlexCenter} />
+          <LoginBottomBox />
+        </Article>
+      </Container>
+      <Footer />
+    </>
   );
 }
 
