@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function LoginFooter() {
+function Footer() {
   return (
-    <Footer>
+    <FooterBox>
       <div>
         <p>Meta</p>
         <p>소개</p>
@@ -25,15 +25,16 @@ function LoginFooter() {
         <p>시각 예술</p>
       </div>
       <span>2022 Justgram from Meta</span>
-    </Footer>
+    </FooterBox>
   );
 }
 
-const Footer = styled.div`
+const FooterBox = styled.div`
   padding: 0 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
   div {
     flex-wrap: wrap;
     display: flex;
@@ -56,4 +57,4 @@ const Footer = styled.div`
   }
 `;
 
-export default LoginFooter;
+export default Footer;
