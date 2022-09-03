@@ -1,20 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import FeedHeader from './HomeLeftBox/FeedHeader';
 import FeedText from './HomeLeftBox/FeedText';
 import FeedReview from './HomeLeftBox/FeedReview';
 
 function HomeLeftBox() {
+  const [info, setInfo] = useState([]);
   const [review, setReview] = useState('');
   const [registerReview, setRegisterReview] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/data.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setInfo(data);
+      });
+  }, [setInfo]);
+
+  console.log(info);
+
   return (
     <Container>
       <Feeds>
-        <FeedHeader />
-        <FeedImage
-          alt="피드이미지"
-          src="https://cdn.pixabay.com/photo/2016/11/22/19/10/architecture-1850092_1280.jpg"
-        ></FeedImage>
+        <FeedHeader info={info} />
+        <FeedImage alt="피드이미지" src={info[0].feedImage}></FeedImage>
         <FeedText
           registerReview={registerReview}
           setRegisterReview={setRegisterReview}
