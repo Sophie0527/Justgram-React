@@ -3,11 +3,14 @@ import styled from 'styled-components';
 
 function FeedHeader(props) {
   const { info } = props;
+
+  const userInfo = info.user;
+
   return (
     <Container>
       <div>
-        <img alt="피드프로필" src={info[0].user.image}></img>
-        <span>{info[0].user.name}</span>
+        <img alt="피드프로필" src={userInfo.image}></img>
+        <span>{userInfo.name}</span>
       </div>
       <img
         alt="더보기"

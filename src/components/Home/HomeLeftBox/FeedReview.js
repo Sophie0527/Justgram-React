@@ -10,6 +10,7 @@ function FeedReview(props) {
     }
     return true;
   };
+
   const valid = validation(review);
 
   const writeReview = () => {

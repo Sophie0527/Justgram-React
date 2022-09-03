@@ -10,8 +10,11 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 function FeedText(props) {
-  const { registerReview, setRegisterReview } = props;
-  const [like, setLike] = useState(false);
+  const { info, registerReview } = props;
+
+  const userInfo = info.user;
+
+  const [like, setLike] = useState(info.isLiked);
 
   // const isLiked = () => {
   //   if (!like) {
@@ -24,6 +27,10 @@ function FeedText(props) {
   const isLiked = () => {
     setLike(!like);
   };
+
+  const likeUserInfo = info.likeUser;
+
+  const commentListInfo = info.commentList;
 
   return (
     <Container>
@@ -47,53 +54,37 @@ function FeedText(props) {
           alt="좋아요프로필"
           src="https://photo-cdn2.icons8.com/KQG1tldVmhm7k1T2FRi1KCXBzBwEe_fhtw4VETFPZRM/rs:fit:714:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNDg2LzBjNjY0/OGIwLTc5NTgtNDU0/My05YjI2LWQ4ODE3/M2RjMTlmZS5qcGc.jpg"
         ></img>
-        <span>Ted_88님 외 10명이 좋아합니다</span>
+        <span>
+          {likeUserInfo.name}님 외 {likeUserInfo.likes}명이 좋아합니다
+        </span>
       </LikesBox>
       <FeedContents>
-        <span>sophie0527</span>
-        <p>오늘은 미술관 가는 날...</p>
-        <button>더 보기</button>
+        <span>{userInfo.name}</span>
+        <p>{info.content}</p>
+        <button>・・・ 더 보기</button>
       </FeedContents>
 
-      <ReviewContents>
-        <div>
-          <span>Ted_88</span>
-          <p>거봐 좋았잖아~~~~🫶</p>
-        </div>
-        <FontAwesomeIcon
-          color={like ? 'tomato' : 'lightgray'}
-          icon={like ? faHeartCircleCheck : faHeart}
-          alt="하트"
-          onClick={() => {
-            isLiked();
-          }}
-        />
-      </ReviewContents>
-
-      {registerReview.map((registerReview, review, index) => {
+      {commentListInfo?.map(commentListInfo => {
         return (
-          <ReviewContents key={registerReview.index}>
+          <ReviewContents key={commentListInfo.id}>
+            <div>
+              <span>{commentListInfo.name}</span>
+              <p>{commentListInfo.content}</p>
+            </div>
+          </ReviewContents>
+        );
+      })}
+
+      {registerReview.map(registerReview => {
+        return (
+          <ReviewContents key={registerReview}>
             <div>
               <span>Justcode_bootcamp</span>
               <p>{registerReview}</p>
             </div>
             <div>
-              <Delete
-                onClick={() => {
-                  setRegisterReview([]);
-                }}
-              >
-                삭제
-              </Delete>
-              <FontAwesomeIcon
-                color={like ? 'tomato' : 'lightgray'}
-                icon={like ? faHeartCircleCheck : faHeart}
-                alt="하트"
-                onClick={() => {
-                  isLiked();
-                  console.log(registerReview);
-                }}
-              />
+              <Delete>삭제</Delete>
+              <FontAwesomeIcon color={'lightgray'} icon={faHeart} alt="하트" />
             </div>
           </ReviewContents>
         );

@@ -19,23 +19,22 @@ function HomeLeftBox() {
       });
   }, [setInfo]);
 
-  console.log(info);
-
   return (
     <Container>
-      <Feeds>
-        <FeedHeader info={info} />
-        <FeedImage alt="피드이미지" src={info[0].feedImage}></FeedImage>
-        <FeedText
-          registerReview={registerReview}
-          setRegisterReview={setRegisterReview}
-        />
-        <FeedReview
-          review={review}
-          setReview={setReview}
-          setRegisterReview={setRegisterReview}
-        />
-      </Feeds>
+      {info?.map(info => {
+        return (
+          <Feeds key={info.id}>
+            <FeedHeader info={info} />
+            <FeedImage alt="피드이미지" src={info.feedImage}></FeedImage>
+            <FeedText info={info} registerReview={registerReview} />
+            <FeedReview
+              review={review}
+              setReview={setReview}
+              setRegisterReview={setRegisterReview}
+            />
+          </Feeds>
+        );
+      })}
     </Container>
   );
 }
@@ -54,6 +53,7 @@ const Feeds = styled.div`
   background-color: white;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
+  margin-bottom: 20px;
 `;
 
 const FeedImage = styled.img`
