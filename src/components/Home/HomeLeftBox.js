@@ -1,21 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import FeedHeader from './HomeLeftBox/FeedHeader';
 import FeedText from './HomeLeftBox/FeedText';
 import FeedReview from './HomeLeftBox/FeedReview';
 
 function HomeLeftBox() {
+  const [info, setInfo] = useState([]);
+  const [review, setReview] = useState('');
+  const [registerReview, setRegisterReview] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/data.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setInfo(data);
+      });
+  }, [setInfo]);
+
   return (
     <Container>
-      <Feeds>
-        <FeedHeader />
-        <FeedImage
-          alt="피드이미지"
-          src="https://cdn.pixabay.com/photo/2016/11/22/19/10/architecture-1850092_1280.jpg"
-        ></FeedImage>
-        <FeedText />
-        <FeedReview />
-      </Feeds>
+      {info?.map(info => {
+        return (
+          <Feeds key={info.id}>
+            <FeedHeader info={info} />
+            <FeedImage alt="피드이미지" src={info.feedImage}></FeedImage>
+            <FeedText info={info} registerReview={registerReview} />
+            <FeedReview
+              review={review}
+              setReview={setReview}
+              setRegisterReview={setRegisterReview}
+            />
+          </Feeds>
+        );
+      })}
     </Container>
   );
 }
@@ -34,6 +53,7 @@ const Feeds = styled.div`
   background-color: white;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
+  margin-bottom: 20px;
 `;
 
 const FeedImage = styled.img`

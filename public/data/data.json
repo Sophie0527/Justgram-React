@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "user": {
+      "name": "sophie0527",
+      "image": "https://photo-cdn2.icons8.com/SYIu_ZIL0mGfZdevQ6s5QZXlo3d1JFIDsuiTNYoiQ4Q/rs:fit:716:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNTM1L2I3Zjk4/YzBhLTg2NWUtNDYz/My04YmE5LTdjMzQx/MWIxODE1OC5qcGc.jpg"
+    },
+    "feedImage": "https://cdn.pixabay.com/photo/2016/11/22/19/10/architecture-1850092_1280.jpg",
+    "isLiked": false,
+    "likeUser": {
+      "name": "Ted_88",
+      "image": "https://images.unsplash.com/photo-1653571764536-0871291303f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
+      "likes": 30
+    },
+    "date": "2022-05-27 18:41",
+    "content": "오늘은 미술관 가는 날",
+    "commentList": [
+      {
+        "id": 1,
+        "name": "Ted_88",
+        "content": "거봐 좋았잖아~~~~🫶",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "name": "applepie",
+        "content": "beautiful world!",
+        "isLiked": true
+      },
+      {
+        "id": 3,
+        "name": "justcode",
+        "content": "justcode bootcamp",
+        "isLiked": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user": {
+      "name": "aaa_1",
+      "image": "https://images.unsplash.com/photo-1653604212161-b50f445f7987?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    "feedImage": "https://images.unsplash.com/photo-1653478986501-61b22a3362ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+    "isLiked": true,
+    "likeUser": {
+      "name": "bbb_234",
+      "image": "https://images.unsplash.com/photo-1653580137336-8bf40907aba4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+      "likes": 25
+    },
+    "date": "2022-05-29 18:41",
+    "content": "Welcome to world best coding bootcamp!",
+    "commentList": [
+      {
+        "id": 1,
+        "name": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "name": "applepie",
+        "content": "beautiful world!",
+        "isLiked": true
+      },
+      {
+        "id": 3,
+        "name": "codekunst",
+        "content": "Nice to meet you",
+        "isLiked": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "user": {
+      "name": "dearandmood88",
+      "image": "https://images.unsplash.com/photo-1653507295257-dd9f52b4ecdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+    },
+    "feedImage": "https://images.unsplash.com/photo-1653552390829-e716cc925d11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2OHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+    "isLiked": true,
+    "likeUser": {
+      "name": "love_sori",
+      "image": "https://images.unsplash.com/photo-1653571764536-0871291303f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
+      "likes": 48
+    },
+    "date": "2022-05-27 18:41",
+    "content": "저의 베스킨라빈스 최애는 아몬드봉봉입니다!!",
+    "commentList": [
+      {
+        "id": 1,
+        "name": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "name": "applepie",
+        "content": "beautiful world!",
+        "isLiked": true
+      }
+    ]
+  }
+]

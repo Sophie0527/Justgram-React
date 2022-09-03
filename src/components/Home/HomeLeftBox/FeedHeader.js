@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function FeedHeader() {
+function FeedHeader(props) {
+  const { info } = props;
+
+  const userInfo = info.user;
+
   return (
     <Container>
       <div>
-        <img
-          alt="피드프로필"
-          src="https://photo-cdn2.icons8.com/SYIu_ZIL0mGfZdevQ6s5QZXlo3d1JFIDsuiTNYoiQ4Q/rs:fit:716:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNTM1L2I3Zjk4/YzBhLTg2NWUtNDYz/My04YmE5LTdjMzQx/MWIxODE1OC5qcGc.jpg"
-        ></img>
-        <span>sophie0527</span>
+        <img alt="피드프로필" src={userInfo.image}></img>
+        <span>{userInfo.name}</span>
       </div>
       <img
         alt="더보기"
