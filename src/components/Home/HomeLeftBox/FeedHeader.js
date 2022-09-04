@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 function FeedHeader(props) {
-  const { info } = props;
+  const { feeds, num } = props;
 
-  const userInfo = info.user;
+  const userInfo = feeds[num].user;
 
   return (
     <Container>
