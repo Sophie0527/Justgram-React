@@ -7,7 +7,7 @@ function LoginBox() {
   const [pw, setPw] = useState('');
 
   const validation = (id, pw) => {
-    if (id.length < 1 || pw.length < 8) {
+    if (!id.includes('@') || pw.length < 5) {
       return false;
     }
     return true;
@@ -15,6 +15,11 @@ function LoginBox() {
   const valid = validation(id, pw);
 
   const navigate = useNavigate();
+
+  const btnClick = () => {
+    alert('로그인을 축하합니다 🥳');
+    navigate('/');
+  };
 
   return (
     <LoginContainer>
@@ -40,9 +45,7 @@ function LoginBox() {
           <button
             className={valid ? 'active' : 'inactive'}
             disabled={!valid}
-            onClick={() => {
-              navigate('/');
-            }}
+            onClick={btnClick}
           >
             <div>로그인</div>
           </button>
