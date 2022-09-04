@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import FeedHeader from './HomeLeftBox/FeedHeader';
 import FeedText from './HomeLeftBox/FeedText';
-import FeedReview from './HomeLeftBox/FeedReview';
 
 function HomeLeftBox() {
-  const [info, setInfo] = useState([]);
-  const [review, setReview] = useState('');
-  const [registerReview, setRegisterReview] = useState([]);
+  const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/data.json', {
@@ -15,23 +12,18 @@ function HomeLeftBox() {
     })
       .then(res => res.json())
       .then(data => {
-        setInfo(data);
+        setFeeds(data);
       });
-  }, [setInfo]);
+  }, [setFeeds]);
 
   return (
     <Container>
-      {info?.map(info => {
+      {feeds.map((feed, num) => {
         return (
-          <Feeds key={info.id}>
-            <FeedHeader info={info} />
-            <FeedImage alt="피드이미지" src={info.feedImage}></FeedImage>
-            <FeedText info={info} registerReview={registerReview} />
-            <FeedReview
-              review={review}
-              setReview={setReview}
-              setRegisterReview={setRegisterReview}
-            />
+          <Feeds key={num}>
+            <FeedHeader feeds={feeds} num={num} />
+            <FeedImage alt="피드이미지" src={feed.feedImage}></FeedImage>
+            <FeedText num={num} feeds={feeds} setFeeds={setFeeds} feed={feed} />
           </Feeds>
         );
       })}
@@ -58,8 +50,6 @@ const Feeds = styled.div`
 
 const FeedImage = styled.img`
   width: 614px;
-  height: 614px;
-  object-fit: cover;
 `;
 
 export default HomeLeftBox;

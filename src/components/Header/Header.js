@@ -32,6 +32,7 @@ function Header() {
             <span
               onClick={() => {
                 navigate('/');
+                window.location.reload();
               }}
             >
               Justgram
@@ -89,7 +90,7 @@ const M = styled.div`
   justify-content: center;
   margin-top: 65px;
   position: fixed;
-  z-index: 998;
+  z-index: 1000;
   section {
     display: flex;
     flex-direction: column;
