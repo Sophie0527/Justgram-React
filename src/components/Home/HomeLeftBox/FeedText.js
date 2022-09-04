@@ -12,7 +12,7 @@ import {
 function FeedText(props) {
   const { feeds, setFeeds, num, feed } = props;
 
-  const [like, setLike] = useState(feeds.isLiked);
+  const [like, setLike] = useState(feed.isLiked);
   const isLiked = () => {
     setLike(!like);
   };
@@ -109,10 +109,7 @@ function FeedText(props) {
         </LikesBox>
         <FeedContents>
           <span>{feeds[num].user.name}</span>
-          <p>
-            {/* {feeds[num].content} */}
-            {feedContent}
-          </p>
+          <p>{feedContent}</p>
           {modalOpen ? (
             <button
               id="btn"
