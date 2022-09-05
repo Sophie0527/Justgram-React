@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import HomeLeftBox from '../../components/Home/HomeLeftBox';
 import HomeRightBox from '../../components/Home/HomeRightBox';
+import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function Home() {
   return (
@@ -33,6 +34,10 @@ const HomeBox = styled.div`
   padding-top: 60px;
   display: flex;
   justify-content: center;
+  ${CustomMediaStyle.lessThan('tablet')`
+  flex-direction: column-reverse;
+  align-items: center;
+`}
 `;
 
 export default Home;

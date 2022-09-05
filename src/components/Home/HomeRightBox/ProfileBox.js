@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function ProfileBox() {
   return (
@@ -21,6 +22,9 @@ const Container = styled.div`
   justify-content: left;
   align-items: center;
   padding-bottom: 15px;
+  ${CustomMediaStyle.lessThan('tablet')`
+  display: none;
+	`}
   img {
     width: 50px;
     height: 50px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function Rcommended() {
   return (
@@ -27,7 +28,7 @@ function Rcommended() {
           ></img>
           <div>
             <span>mizineee</span>
-            <p>Ted_88님 외 2명이 팔로우합니다</p>
+            <p>Ted_88님 외 2명이 팔로...</p>
           </div>
           <button>팔로우</button>
         </RcommendedBoxInfo>
@@ -56,6 +57,9 @@ const Container = styled.div`
   border-radius: 3px;
   padding: 13px 13px;
   max-height: 200px;
+  ${CustomMediaStyle.lessThan('tablet')`
+  display: none;
+	`}
 `;
 
 const RcommendedBoxInfoWrap = styled.div`
@@ -96,7 +100,7 @@ const RcommendedBoxInfo = styled.div`
     margin: 5px 5px 5px 0;
   }
   div {
-    width: 50px;
+    width: 15px;
     span {
       font-size: 15px;
       font-weight: 500;

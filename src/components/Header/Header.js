@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function Header() {
   const navigate = useNavigate();
@@ -90,7 +91,7 @@ const M = styled.div`
   justify-content: center;
   margin-top: 65px;
   position: fixed;
-  z-index: 1000;
+  z-index: 800;
   section {
     display: flex;
     flex-direction: column;
@@ -101,6 +102,12 @@ const M = styled.div`
     border-radius: 5px;
     border: 1px solid #dbdbdb;
     box-shadow: 4px 3px 5px rgba(160, 160, 160, 0.1);
+    ${CustomMediaStyle.lessThan('tablet')`
+      margin-left: 75%;
+	  `}
+    ${CustomMediaStyle.lessThan('mobile')`
+      margin-left: 73%;
+	  `}
   }
   div {
     margin: 5px 0 2px;
@@ -139,7 +146,6 @@ const Container = styled.div`
   box-shadow: 4px 3px 5px rgba(160, 160, 160, 0.1);
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
 
   position: fixed;
@@ -147,7 +153,6 @@ const Container = styled.div`
 `;
 
 const HeaderBox = styled.div`
-  margin: 0 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -155,6 +160,13 @@ const HeaderBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 100px;
+    ${CustomMediaStyle.lessThan('tablet')`
+      padding: 0 50px;
+	  `}
+    ${CustomMediaStyle.lessThan('mobile')`
+      padding: 0 30px;
+	  `}
     span {
       font-size: 25px;
       color: black;

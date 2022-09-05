@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function HomeRightBox() {
   return (
@@ -60,12 +61,24 @@ const Container = styled.div`
   padding: 13px 13px;
   margin-bottom: 10px;
   max-height: 200px;
+  ${CustomMediaStyle.lessThan('tablet')`
+  padding: 13px 0px;
+  margin:10px;
+`}
 `;
 
 const StoryBoxInfoWrap = styled.div`
   overflow: scroll;
   overflow: auto;
   white-space: nowrap;
+  ${CustomMediaStyle.lessThan('tablet')`
+  display: flex;
+  justify-content: left;
+  width: 614px;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`}
 `;
 
 const StoryBoxHeader = styled.div`
@@ -74,6 +87,10 @@ const StoryBoxHeader = styled.div`
   align-items: center;
   width: 100%;
   padding-bottom: 10px;
+  ${CustomMediaStyle.lessThan('tablet')`
+  display: none;
+  
+	`}
   span {
     font-size: 15px;
     font-weight: 450;
@@ -89,7 +106,12 @@ const StoryBoxInfo = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
-  width: 320px;
+  width: 270px;
+  ${CustomMediaStyle.lessThan('tablet')`
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+	`}
   div {
     span {
       font-size: 15px;
@@ -99,6 +121,9 @@ const StoryBoxInfo = styled.div`
       font-size: 14px;
       color: #a0a0a0;
       padding-top: 5px;
+      ${CustomMediaStyle.lessThan('tablet')`
+        display: none;
+	    `}
     }
   }
 `;
@@ -110,14 +135,14 @@ const StoryprofileBox = styled.div`
     linear-gradient(to right, red 0%, orange 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  margin: 5px;
+  margin: 5px 10px 5px 5px;
   border-image-slice: 1;
   display: flex;
   justify-content: left;
   align-items: center;
   img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     object-fit: cover;
     border-radius: 50%;
     margin: 4px 4px 4px 4px;
