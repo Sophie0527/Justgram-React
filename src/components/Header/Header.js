@@ -165,7 +165,7 @@ const HeaderBox = styled.div`
       padding: 0 50px;
 	  `}
     ${CustomMediaStyle.lessThan('mobile')`
-      padding: 0 30px;
+      padding: 0 10px;
 	  `}
     span {
       font-size: 25px;

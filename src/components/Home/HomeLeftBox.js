@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import FeedHeader from './HomeLeftBox/FeedHeader';
 import FeedText from './HomeLeftBox/FeedText';
+import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function HomeLeftBox() {
   const [feeds, setFeeds] = useState([]);
@@ -50,6 +51,9 @@ const Feeds = styled.div`
 
 const FeedImage = styled.img`
   width: 614px;
+  ${CustomMediaStyle.lessThan('mobile')`
+  width: 500px;
+`}
 `;
 
 export default HomeLeftBox;
