@@ -99,10 +99,7 @@ function FeedText(props) {
           <FontAwesomeIcon icon={faBookmark} alt="북마크" />
         </IconBox>
         <LikesBox>
-          <img
-            alt="좋아요프로필"
-            src="https://photo-cdn2.icons8.com/KQG1tldVmhm7k1T2FRi1KCXBzBwEe_fhtw4VETFPZRM/rs:fit:714:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNDg2LzBjNjY0/OGIwLTc5NTgtNDU0/My05YjI2LWQ4ODE3/M2RjMTlmZS5qcGc.jpg"
-          ></img>
+          <img alt="좋아요프로필" src={feeds[num].likeUser.image}></img>
           <span>
             {feeds[num].likeUser.name}님 외 {feeds[num].likeUser.likes}명이
             좋아합니다
@@ -182,12 +179,9 @@ function FeedText(props) {
 }
 
 const Container = styled.div`
-  width: 614px;
+  width: 100%;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 10px;
-  ${CustomMediaStyle.lessThan('mobile')`
-  width: 500px;
-`}
 `;
 
 const IconBox = styled.div`
@@ -315,8 +309,8 @@ const InputContainer = styled.div`
     border: none;
     outline: none;
     ${CustomMediaStyle.lessThan('mobile')`
-       width: 350px;
-    `}
+  width: 400px;
+	`}
   }
   button {
     border: none;

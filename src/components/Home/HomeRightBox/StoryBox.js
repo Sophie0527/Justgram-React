@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function HomeRightBox() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/user.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setUsers(data);
+      });
+  }, [setUsers]);
+  console.log(users);
+
   return (
     <Container>
       <StoryBoxHeader>
@@ -10,42 +23,19 @@ function HomeRightBox() {
         <p>모두보기</p>
       </StoryBoxHeader>
       <StoryBoxInfoWrap>
-        <StoryBoxInfo>
-          <StoryprofileBox>
-            <img
-              alt="스토리프로필"
-              src="https://photo-cdn2.icons8.com/f_TnFr-C592GoK7BkQ7fNREtTbjj_O73NWzOjlSCHfg/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTkxLzZhYmQw/ZTk3LTliOGItNGM5/Mi05ZGI4LTcxMmQ1/MjNlYTFlOS5qcGc.jpg"
-            ></img>
-          </StoryprofileBox>
-          <div>
-            <span>__yum_s</span>
-            <p>16분 전</p>
-          </div>
-        </StoryBoxInfo>
-        <StoryBoxInfo>
-          <StoryprofileBox>
-            <img
-              alt="스토리프로필"
-              src="https://photo-cdn2.icons8.com/KQG1tldVmhm7k1T2FRi1KCXBzBwEe_fhtw4VETFPZRM/rs:fit:714:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNDg2LzBjNjY0/OGIwLTc5NTgtNDU0/My05YjI2LWQ4ODE3/M2RjMTlmZS5qcGc.jpg"
-            ></img>
-          </StoryprofileBox>
-          <div>
-            <span>Ted_88</span>
-            <p>3시간 전</p>
-          </div>
-        </StoryBoxInfo>
-        <StoryBoxInfo>
-          <StoryprofileBox>
-            <img
-              alt="스토리프로필"
-              src="https://photo-cdn2.icons8.com/JAOB9Wk8oxFyaOXN6HsJuAByNyJ3mSkuAEP7lp0mPx0/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTg2L2MzMjA1/NWQxLWVjMWEtNDk1/NS1iN2Q0LTMxODBi/ZGUxNzdhZi5qcGc.jpg"
-            ></img>
-          </StoryprofileBox>
-          <div>
-            <span>mat.eat.zzi</span>
-            <p>20시간 전</p>
-          </div>
-        </StoryBoxInfo>
+        {users.map(user => {
+          return (
+            <StoryBoxInfo key={user.id}>
+              <StoryprofileBox>
+                <img alt="스토리프로필" src={user.image}></img>
+              </StoryprofileBox>
+              <div>
+                <span>{user.userName}</span>
+                <p>{user.time}분 전</p>
+              </div>
+            </StoryBoxInfo>
+          );
+        })}
       </StoryBoxInfoWrap>
     </Container>
   );
@@ -75,9 +65,7 @@ const StoryBoxInfoWrap = styled.div`
   display: flex;
   justify-content: left;
   width: 614px;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  height: 110px;
 `}
   ${CustomMediaStyle.lessThan('mobile')`
     width: 470px;
@@ -92,7 +80,6 @@ const StoryBoxHeader = styled.div`
   padding-bottom: 10px;
   ${CustomMediaStyle.lessThan('tablet')`
   display: none;
-  
 	`}
   span {
     font-size: 15px;
@@ -116,12 +103,16 @@ const StoryBoxInfo = styled.div`
     width: 100px;
 	`}
   ${CustomMediaStyle.lessThan('mobile')`
-  width: 90px;
+    width: 90px;
 	`}
   div {
     span {
       font-size: 15px;
       font-weight: 500;
+      ${CustomMediaStyle.lessThan('tablet')`
+      font-size: 11px;
+      font-weight: 400;
+`}
     }
     p {
       font-size: 14px;
