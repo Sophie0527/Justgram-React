@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function SubFooter() {
   return (
@@ -27,6 +28,9 @@ const FooterBox = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #fafafa;
+  ${CustomMediaStyle.lessThan('tablet')`
+  display: none;
+	`}
   div {
     flex-wrap: wrap;
     display: flex;
