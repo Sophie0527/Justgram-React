@@ -63,7 +63,7 @@ const Container = styled.div`
   max-height: 200px;
   ${CustomMediaStyle.lessThan('tablet')`
   padding: 13px 0px;
-  margin:10px;
+  margin: -30px 10px 10px 10px;
 `}
 `;
 
@@ -79,6 +79,9 @@ const StoryBoxInfoWrap = styled.div`
     display: none;
   }
 `}
+  ${CustomMediaStyle.lessThan('mobile')`
+    width: 470px;
+	`}
 `;
 
 const StoryBoxHeader = styled.div`
@@ -111,6 +114,9 @@ const StoryBoxInfo = styled.div`
     display: flex;
     flex-direction: column;
     width: 100px;
+	`}
+  ${CustomMediaStyle.lessThan('mobile')`
+  width: 90px;
 	`}
   div {
     span {
@@ -145,7 +151,7 @@ const StoryprofileBox = styled.div`
     height: 45px;
     object-fit: cover;
     border-radius: 50%;
-    margin: 4px 4px 4px 4px;
+    margin: 4px;
   }
 `;
 

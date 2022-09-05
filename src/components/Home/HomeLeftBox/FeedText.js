@@ -8,6 +8,7 @@ import {
   faMessage,
   faCircleDown,
 } from '@fortawesome/free-regular-svg-icons';
+import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function FeedText(props) {
   const { feeds, setFeeds, num, feed } = props;
@@ -184,6 +185,9 @@ const Container = styled.div`
   width: 614px;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 10px;
+  ${CustomMediaStyle.lessThan('mobile')`
+  width: 500px;
+`}
 `;
 
 const IconBox = styled.div`
@@ -310,6 +314,9 @@ const InputContainer = styled.div`
     width: 500px;
     border: none;
     outline: none;
+    ${CustomMediaStyle.lessThan('mobile')`
+       width: 350px;
+    `}
   }
   button {
     border: none;
