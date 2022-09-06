@@ -78,6 +78,9 @@ const UserBox = styled.div`
   overflow: scroll;
   overflow: auto;
   white-space: nowrap;
+  div:hover {
+    background-color: #e1e1e1;
+  }
 `;
 
 const UserInfo = styled.div`
