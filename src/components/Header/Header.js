@@ -48,7 +48,9 @@ function Header() {
       setSearchModal(false);
     }
   };
+  //
 
+  const [inputSearch, setInputSearch] = useState('');
   return (
     <>
       <Container
@@ -56,7 +58,11 @@ function Header() {
           closeModal();
         }}
       >
-        <Modal users={users} searchModal={searchModal} />
+        <Modal
+          users={users}
+          searchModal={searchModal}
+          inputSearch={inputSearch}
+        />
         <HeaderBox>
           <div>
             <span
@@ -68,11 +74,17 @@ function Header() {
               Justgram
             </span>
           </div>
-          <div>
+          <div
+            onClick={() => {
+              openSearchModal();
+            }}
+          >
             <input
               placeholder="검색"
-              onClick={() => {
-                openSearchModal();
+              value={inputSearch}
+              type="text"
+              onChange={e => {
+                setInputSearch(e.target.value);
               }}
             ></input>
             {/* {searchModal ? <p>검색 클릭하면 나오는 모달</p> : null} */}

@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Modal = props => {
-  const { searchModal, users } = props;
+  const { searchModal, users, inputSearch } = props;
+
   return (
     <Container>
       {searchModal ? (
@@ -12,17 +13,19 @@ const Modal = props => {
             alt="세모아이콘"
           />
           <TextBox>
-            {users.map(user => {
-              return (
-                <UserInfo key={user.id}>
-                  <img src={user.image} alt="스토리프로필" />
-                  <div>
-                    <span>{user.userName}</span>
-                    <p>{user.name}</p>
-                  </div>
-                </UserInfo>
-              );
-            })}
+            {users
+              .filter(user => user.userName.toLowerCase().includes(inputSearch))
+              .map(user => {
+                return (
+                  <UserInfo key={user.id}>
+                    <img src={user.image} alt="스토리프로필" />
+                    <div>
+                      <span>{user.userName}</span>
+                      <p>{user.name}</p>
+                    </div>
+                  </UserInfo>
+                );
+              })}
           </TextBox>
         </SearchBox>
       ) : null}
