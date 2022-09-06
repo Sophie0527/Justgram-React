@@ -24,23 +24,22 @@ function Footer() {
         <p>음악</p>
         <p>시각 예술</p>
       </div>
-      <span>2022 Justgram from Meta</span>
+      <span>@ 2022 Justgram from Sophie</span>
     </FooterBox>
   );
 }
 
 const FooterBox = styled.div`
-  padding: 30px 16px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 55px 0 30px;
   background-color: #fafafa;
   div {
-    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 24px;
+    flex-wrap: wrap;
     max-width: 800px;
     p {
       margin: 0 8px 12px;
@@ -49,11 +48,10 @@ const FooterBox = styled.div`
     }
   }
   span {
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
+    margin: 20px 0;
     color: #a0a0a0;
-    margin: 12px 0 52px;
+    font-size: 13px;
+    font-weight 500;
   }
 `;
 
