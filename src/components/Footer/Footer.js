@@ -30,7 +30,7 @@ function Footer() {
 }
 
 const FooterBox = styled.div`
-  padding: 0 16px;
+  padding: 30px 16px 0;
   display: flex;
   flex-direction: column;
   align-items: center;

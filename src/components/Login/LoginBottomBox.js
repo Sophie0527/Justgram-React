@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 function LoginBottomBox() {
   return (
@@ -15,11 +15,11 @@ function LoginBottomBox() {
         <div>
           <img
             src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_korean-ko.png/4a5c9d62d51b.png"
-            alt="App Store에서 다운로드"
+            alt="App Store"
           />
           <img
             src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_korean-ko.png/f155b664a93b.png"
-            alt="Google Play에서 다운로드"
+            alt="Google Play"
           />
         </div>
       </AppDownload>
@@ -27,21 +27,34 @@ function LoginBottomBox() {
   );
 }
 
-const SignupBox = styled.div`
+// 가로정렬
+const HorizAlign = css`
   display: flex;
   justify-content: center;
-  text-align: center;
-  background-color: white;
-  border: 1px solid #dbdbdb;
-  border-radius: 1px;
+  align-items: center;
+`;
+
+// 세로정렬
+const VerAlign = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const SignupBox = styled.div`
+  ${HorizAlign}
+  width: 350px;
   margin-bottom: 10px;
   padding: 10px 0;
-  width: 350px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
   box-shadow: 3px 3px 3px rgba(160, 160, 160, 0.1);
   p {
-    margin: 15px 15px;
+    margin: 15px;
     font-size: 14px;
     span {
+      padding-left: 3px;
       color: #0095f6;
       font-weight: 500;
       cursor: pointer;
@@ -50,16 +63,15 @@ const SignupBox = styled.div`
 `;
 
 const AppDownload = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${VerAlign}
   width: 350px;
   p {
-    font-size: 14px;
     margin: 10px 20px;
+    font-size: 14px;
+    color: #a0a0a0;
   }
   div {
-    display: flex;
+    ${HorizAlign}
     margin: 10px 0;
     img {
       width: 150px;
