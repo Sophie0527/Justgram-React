@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import LoginBox from '../../components/Login/LoginBox';
 import LoginBottomBox from '../../components/Login/LoginBottomBox';
 import Footer from '../../components/Footer/Footer';
@@ -8,31 +8,21 @@ function Login() {
   return (
     <>
       <Container>
-        <Article>
-          <LoginBox FlexCenter={FlexCenter} />
-          <LoginBottomBox />
-        </Article>
+        <LoginBox />
+        <LoginBottomBox />
+        <Footer />
       </Container>
-      <Footer />
     </>
   );
 }
 
-const FlexCenter = css`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Container = styled.div`
   background-color: #fafafa;
   height: 100vh;
-  ${FlexCenter}
-`;
-
-const Article = styled.div`
-  padding-top: 80px;
-  padding-bottom: 32px;
+  padding: 80px 0 32px;
 `;
 
 export default Login;
