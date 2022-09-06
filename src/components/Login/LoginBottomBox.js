@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 function LoginBottomBox() {
   return (
@@ -27,13 +27,26 @@ function LoginBottomBox() {
   );
 }
 
-const SignupBox = styled.div`
+// 가로정렬
+const HorizAlign = css`
   display: flex;
   justify-content: center;
-  background-color: white;
+  align-items: center;
+`;
+
+// 세로정렬
+const VerAlign = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const SignupBox = styled.div`
+  ${HorizAlign}
   width: 350px;
   margin-bottom: 10px;
   padding: 10px 0;
+  background-color: white;
   border: 1px solid #dbdbdb;
   border-radius: 8px;
   box-shadow: 3px 3px 3px rgba(160, 160, 160, 0.1);
@@ -50,9 +63,7 @@ const SignupBox = styled.div`
 `;
 
 const AppDownload = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${VerAlign}
   width: 350px;
   p {
     margin: 10px 20px;
@@ -60,9 +71,7 @@ const AppDownload = styled.div`
     color: #a0a0a0;
   }
   div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${HorizAlign}
     margin: 10px 0;
     img {
       width: 150px;
