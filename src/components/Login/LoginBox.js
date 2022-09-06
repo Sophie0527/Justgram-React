@@ -95,8 +95,9 @@ const Container = styled.div`
   h1 {
     ${HorizAlign}
     margin-top: 40px;
-    font-size: 35px;
+    font-size: 38px;
     font-weight: 500;
+    font-family: 'DM Serif Display', serif;
   }
 `;
 

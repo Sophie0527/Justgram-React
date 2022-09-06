@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import Modal from '../Modal/Modal';
+import styled, { css } from 'styled-components';
 import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
+import SearchModal from '../Modal/SearchModal';
+import ProfileModal from '../Modal/ProfileModal';
 
 function Header() {
+  // user의 목데이터를 fetch하여 users 배열에 담기
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -17,224 +19,170 @@ function Header() {
       });
   }, [setUsers]);
 
-  const navigate = useNavigate();
+  // nav 프로필 사진 클릭 시 메뉴 박스 생성 (모달로 구현)
+  const [profileOpen, setProfileOpen] = useState(false);
 
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    if (!modalOpen) {
-      setModalOpen(true);
+  const openProfilehModal = () => {
+    if (!profileOpen) {
+      setProfileOpen(true);
     } else {
-      setModalOpen(false);
+      setProfileOpen(false);
     }
   };
 
-  const closeModal = () => {
-    if (modalOpen) {
-      setModalOpen(false);
-    } else if (searchModal) {
-      setSearchModal(false);
-    }
-  };
-
-  //
-
-  const [searchModal, setSearchModal] = useState(false);
+  // 아이디 검색 기능
+  // 검색 input창에 입력된 값으르 setState로 바꿔주기
+  // nav 검색 input창 클릭 시 ueser 보여주기 (모달로 구현)
+  const [inputSearch, setInputSearch] = useState('');
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const openSearchModal = () => {
-    if (!searchModal) {
-      setSearchModal(true);
+    if (!searchOpen) {
+      setSearchOpen(true);
     } else {
-      setSearchModal(false);
+      setSearchOpen(false);
     }
   };
-  //
 
-  const [inputSearch, setInputSearch] = useState('');
+  // closeModal시 메뉴박스와 검색박스 닫기.
+  const closeModal = () => {
+    if (profileOpen) {
+      setProfileOpen(false);
+    } else if (searchOpen) {
+      setSearchOpen(false);
+    }
+  };
+
+  // 로고 클릭 시 메인페이지로 이동 (+ window.location.reload() //리랜더링)
+  const navigate = useNavigate();
+
   return (
-    <>
-      <Container
-        onClick={() => {
-          closeModal();
-        }}
-      >
-        <Modal
-          users={users}
-          searchModal={searchModal}
-          inputSearch={inputSearch}
-        />
-        <HeaderBox>
-          <div>
-            <span
-              onClick={() => {
-                navigate('/');
-                window.location.reload();
-              }}
-            >
-              Justgram
-            </span>
-          </div>
-          <div
-            onClick={() => {
-              openSearchModal();
-            }}
-          >
-            <input
-              placeholder="검색"
-              value={inputSearch}
-              type="text"
-              onChange={e => {
-                setInputSearch(e.target.value);
-              }}
-            ></input>
-            {/* {searchModal ? <p>검색 클릭하면 나오는 모달</p> : null} */}
-          </div>
-          <div>
-            <img
-              alt="탐색"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-            ></img>
-            <img
-              alt="하트"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-            ></img>
-            <img
-              alt="마이페이지"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-              onClick={openModal}
-            ></img>
-          </div>
-        </HeaderBox>
-      </Container>
-      {modalOpen ? (
-        <M>
-          <section>
-            <div>
-              <p>프로필</p>
-              <p>설정</p>
-              <p>계정전환</p>
-            </div>
-            <div>
-              <span
-                onClick={() => {
-                  navigate('/login');
-                }}
-              >
-                로그아웃
-              </span>
-            </div>
-          </section>
-        </M>
-      ) : null}
-    </>
+    <Container
+      onClick={() => {
+        closeModal();
+      }}
+    >
+      <SearchModal
+        users={users}
+        searchOpen={searchOpen}
+        inputSearch={inputSearch}
+      />
+
+      <ProfileModal profileOpen={profileOpen} />
+
+      <HeaderBox>
+        <LogoBox
+          onClick={() => {
+            navigate('/');
+            window.location.reload();
+          }}
+        >
+          Justgram
+        </LogoBox>
+        <InputBox
+          onClick={openSearchModal}
+          placeholder="검색"
+          value={inputSearch}
+          type="text"
+          onChange={e => {
+            setInputSearch(e.target.value);
+          }}
+        ></InputBox>
+        <IconBox>
+          <Icon
+            alt="탐색"
+            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
+          ></Icon>
+          <Icon
+            alt="하트"
+            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+          ></Icon>
+          <ProfileIcon onClick={openProfilehModal}>
+            {users
+              .filter(user => user.id === 7)
+              .map(user => {
+                return (
+                  <img key={user.id} alt="마이페이지" src={user.image}></img>
+                );
+              })}
+          </ProfileIcon>
+        </IconBox>
+      </HeaderBox>
+    </Container>
   );
 }
 
-const M = styled.div`
-  height: 100px;
-  width: 100%;
+// 가로정렬
+const HorizAlign = css`
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  margin-top: 65px;
-  position: fixed;
-  z-index: 800;
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #efefef;
-    width: 150px;
-    margin-left: 73%;
-    border-radius: 5px;
-    border: 1px solid #dbdbdb;
-    box-shadow: 4px 3px 5px rgba(160, 160, 160, 0.1);
-    ${CustomMediaStyle.lessThan('tablet')`
-      margin-left: 75%;
-	  `}
-    ${CustomMediaStyle.lessThan('mobile')`
-      margin-left: 73%;
-	  `}
-  }
-  div {
-    margin: 5px 0 2px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  p {
-    padding: 5px 0;
-    color: #a0a0a0;
-    font-size: 15px;
-    letter-spacing: 1px;
-    width: 130px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-  }
-  span {
-    padding: 5px 0;
-    width: 150px;
-    border-top: 1px solid #dbdbdb;
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background-color: white;
-    cursor: pointer;
-  }
+  align-items: center;
 `;
 
 const Container = styled.div`
-  border-bottom: 1px #e6e6e6 solid;
-  background-color: white;
-  height: 60px;
+  ${HorizAlign}
   width: 100%;
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid #e6e6e6;
   box-shadow: 4px 3px 5px rgba(160, 160, 160, 0.1);
-
-  display: flex;
-  justify-content: center;
-
   position: fixed;
-  z-index: 999;
+  z-index: 100;
 `;
 
 const HeaderBox = styled.div`
+  width: 900px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 100px;
-    ${CustomMediaStyle.lessThan('tablet')`
-      padding: 0 50px;
+  ${CustomMediaStyle.lessThan('tablet')`
+    width: 600px;
 	  `}
-    ${CustomMediaStyle.lessThan('mobile')`
-      padding: 0 10px;
+  ${CustomMediaStyle.lessThan('mobile')`
+    width: 500px;
 	  `}
-    span {
-      font-size: 25px;
-      color: black;
-      cursor: pointer;
-    }
-    input {
-      width: 268px;
-      height: 36px;
-      border: 0px;
-      border-radius: 8px;
-      outline: none;
+`;
 
-      background-color: #efefef;
-      font-size: 15px;
-      text-align: center;
-    }
-    img {
-      height: 22px;
-      padding-right: 12px;
-      cursor: pointer;
-    }
+const LogoBox = styled.span`
+  font-size: 25px;
+  cursor: pointer;
+  font-family: 'DM Serif Display', serif;
+`;
+
+const InputBox = styled.input`
+  width: 268px;
+  height: 36px;
+  ${HorizAlign}
+  text-align: center;
+  border: 0px;
+  border-radius: 8px;
+  outline: none;
+  background-color: #efefef;
+  font-size: 15px;
+  ${CustomMediaStyle.lessThan('mobile')`
+      width: 220px;
+	`}
+`;
+
+const IconBox = styled.div`
+  ${HorizAlign}
+`;
+
+const Icon = styled.img`
+  height: 24px;
+  padding: 0 6px;
+  cursor: pointer;
+`;
+
+const ProfileIcon = styled.div`
+  padding: 0 6px;
+  img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #dbdbdb;
   }
 `;
 
