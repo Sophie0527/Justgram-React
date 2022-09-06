@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import Modal from '../Modal/Modal';
 import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function Header() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/user.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setUsers(data);
+      });
+  }, [setUsers]);
+
   const navigate = useNavigate();
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -18,6 +32,20 @@ function Header() {
   const closeModal = () => {
     if (modalOpen) {
       setModalOpen(false);
+    } else if (searchModal) {
+      setSearchModal(false);
+    }
+  };
+
+  //
+
+  const [searchModal, setSearchModal] = useState(false);
+
+  const openSearchModal = () => {
+    if (!searchModal) {
+      setSearchModal(true);
+    } else {
+      setSearchModal(false);
     }
   };
 
@@ -28,6 +56,7 @@ function Header() {
           closeModal();
         }}
       >
+        <Modal users={users} searchModal={searchModal} />
         <HeaderBox>
           <div>
             <span
@@ -40,7 +69,13 @@ function Header() {
             </span>
           </div>
           <div>
-            <input placeholder="검색"></input>
+            <input
+              placeholder="검색"
+              onClick={() => {
+                openSearchModal();
+              }}
+            ></input>
+            {/* {searchModal ? <p>검색 클릭하면 나오는 모달</p> : null} */}
           </div>
           <div>
             <img
@@ -177,6 +212,8 @@ const HeaderBox = styled.div`
       height: 36px;
       border: 0px;
       border-radius: 8px;
+      outline: none;
+
       background-color: #efefef;
       font-size: 15px;
       text-align: center;

@@ -14,7 +14,6 @@ function HomeRightBox() {
         setUsers(data);
       });
   }, [setUsers]);
-  console.log(users);
 
   return (
     <Container>
@@ -23,19 +22,21 @@ function HomeRightBox() {
         <p>모두보기</p>
       </StoryBoxHeader>
       <StoryBoxInfoWrap>
-        {users.map(user => {
-          return (
-            <StoryBoxInfo key={user.id}>
-              <StoryprofileBox>
-                <img alt="스토리프로필" src={user.image}></img>
-              </StoryprofileBox>
-              <div>
-                <span>{user.userName}</span>
-                <p>{user.time}분 전</p>
-              </div>
-            </StoryBoxInfo>
-          );
-        })}
+        {users
+          .filter(user => user.time < 30)
+          .map(user => {
+            return (
+              <StoryBoxInfo key={user.id}>
+                <StoryprofileBox>
+                  <img alt="스토리프로필" src={user.image}></img>
+                </StoryprofileBox>
+                <div>
+                  <span>{user.userName}</span>
+                  <p>{user.time}분 전</p>
+                </div>
+              </StoryBoxInfo>
+            );
+          })}
       </StoryBoxInfoWrap>
     </Container>
   );
