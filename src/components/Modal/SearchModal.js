@@ -4,39 +4,43 @@ import styled from 'styled-components';
 const SearchModal = props => {
   const { searchOpen, users, inputSearch } = props;
 
-  // const search = () => {
-  //   if (inputSearch === '') {
-  //     return;
-  //   }
-  // };
-  console.log(inputSearch);
-
   return (
-    <Container>
+    <Container searchOpen={searchOpen}>
       {searchOpen ? (
         <SearchBox>
           <img
             src="https://cdn.ggumim.co.kr/storage/20211118152728RO3OXnhkrC.png"
             alt="세모아이콘"
           />
-          <UserBox>
-            {users
-              .filter(user => user.userName.toLowerCase().includes(inputSearch))
-              .map(user => {
-                console.log(users);
-                return (
-                  <UserInfo key={user.id}>
-                    <UserImg>
-                      <img src={user.image} alt="스토리프로필" />
-                    </UserImg>
-                    <UserText>
-                      <span>{user.userName}</span>
-                      <p>{user.name}</p>
-                    </UserText>
-                  </UserInfo>
-                );
-              })}
-          </UserBox>
+          {inputSearch === '' ? (
+            <UserBox>
+              <NoneUser>
+                <span>찾으시는 아이디를 입력해주세요.</span>
+              </NoneUser>
+            </UserBox>
+          ) : (
+            <UserBox>
+              {users
+                .filter(
+                  user =>
+                    user.name.toLowerCase().includes(inputSearch) ||
+                    user.userName.toLowerCase().includes(inputSearch)
+                )
+                .map(user => {
+                  return (
+                    <UserInfo key={user.id}>
+                      <UserImg>
+                        <img src={user.image} alt="스토리프로필" />
+                      </UserImg>
+                      <UserText>
+                        <span>{user.userName}</span>
+                        <p>{user.name}</p>
+                      </UserText>
+                    </UserInfo>
+                  );
+                })}
+            </UserBox>
+          )}
         </SearchBox>
       ) : null}
     </Container>
@@ -48,6 +52,9 @@ const Container = styled.div`
   width: 500px;
   height: 400px;
   margin-top: 440px;
+  display: flex;
+  justify-content: center;
+  display: ${props => (props.searchOpen ? 'flex' : 'none')};
 `;
 
 const SearchBox = styled.div`
@@ -63,7 +70,7 @@ const SearchBox = styled.div`
 const UserBox = styled.div`
   width: 420px;
   max-height: 350px;
-  min-height: 100px;
+  min-height: 250px;
   background-color: white;
   border-radius: 8px;
   padding: 15px 0;
@@ -102,6 +109,19 @@ const UserText = styled.div`
   }
   p {
     font-size: 14px;
+    color: #a0a0a0;
+    padding-top: 5px;
+  }
+`;
+
+const NoneUser = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5px;
+  height: 240px;
+  span {
+    font-size: 15px;
     color: #a0a0a0;
     padding-top: 5px;
   }
