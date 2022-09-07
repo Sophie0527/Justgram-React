@@ -7,6 +7,9 @@ const ProfileModal = props => {
   const { profileOpen } = props;
 
   const navigate = useNavigate();
+  const onClick = () => {
+    navigate('/login');
+  };
 
   return (
     <Container>
@@ -46,11 +49,7 @@ const ProfileModal = props => {
                 ></img>
                 <p>계정전환</p>
               </IconBox>
-              <LogoutBox
-                onClick={() => {
-                  navigate('/login');
-                }}
-              >
+              <LogoutBox onClick={onClick}>
                 <span>로그아웃</span>
               </LogoutBox>
             </TextWrap>
@@ -98,6 +97,9 @@ const TextBox = styled.div`
 
 const TextWrap = styled.div`
   padding: 10px 0;
+  div:hover {
+    background-color: #e1e1e1;
+  }
 `;
 const IconBox = styled.div`
   display: flex;
@@ -117,14 +119,14 @@ const IconBox = styled.div`
 const LogoutBox = styled.div`
   display: flex;
   align-items: center;
-  margin: 7px 0;
+  padding: 12px 20px;
   cursor: pointer;
   border-top: 1px solid black;
+
   span {
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 1px;
-    padding: 10px 20px 0;
   }
 `;
 
