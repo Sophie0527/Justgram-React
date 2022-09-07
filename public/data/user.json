@@ -4,62 +4,135 @@
     "userName": "sophie0527",
     "name": "s_소희_🍊",
     "image": "https://photo-cdn2.icons8.com/SYIu_ZIL0mGfZdevQ6s5QZXlo3d1JFIDsuiTNYoiQ4Q/rs:fit:716:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNTM1L2I3Zjk4/YzBhLTg2NWUtNDYz/My04YmE5LTdjMzQx/MWIxODE1OC5qcGc.jpg",
-    "time": 36
+    "time": 36,
+    "follow": true
   },
   {
     "id": 2,
     "userName": "Ted_88",
     "name": "제갈창민",
     "image": "https://photo-cdn2.icons8.com/KQG1tldVmhm7k1T2FRi1KCXBzBwEe_fhtw4VETFPZRM/rs:fit:714:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNDg2LzBjNjY0/OGIwLTc5NTgtNDU0/My05YjI2LWQ4ODE3/M2RjMTlmZS5qcGc.jpg",
-    "time": 29
+    "time": 29,
+    "follow": true
   },
   {
     "id": 3,
     "userName": "humor.dooly",
     "name": "둘리🤢",
     "image": "https://cdn.pixabay.com/photo/2021/05/23/00/21/woman-6274879_1280.png",
-    "time": 21
+    "time": 21,
+    "follow": true
   },
   {
     "id": 4,
     "userName": "ohye__nail",
     "name": "네일아트💅",
     "image": "https://cdn.pixabay.com/photo/2020/08/21/08/46/african-5505598_1280.jpg",
-    "time": 11
+    "time": 11,
+    "follow": true
   },
   {
     "id": 5,
     "userName": "dearandmood88",
     "name": "디어앤무드",
     "image": "https://images.unsplash.com/photo-1653507295257-dd9f52b4ecdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-    "time": 15
+    "time": 15,
+    "follow": true
   },
   {
     "id": 6,
     "userName": "love_sori",
     "name": "소리🤍",
     "image": "https://images.unsplash.com/photo-1653571764536-0871291303f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
-    "time": 21
+    "time": 21,
+    "follow": true
   },
   {
     "id": 7,
     "userName": "Justcode_bootcamp",
     "name": "JustCode | 저스트코드",
     "image": "https://photo-cdn2.icons8.com/4wa5SzU3xk4567rFi0N16cTnb1upMiKG2XbjsThBKWs/rs:fit:1608:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTA0LzcyMmZl/OTZhLTZiZjEtNGI2/NS1iNjkxLTU0Yjc4/YWE4MWJiNS5qcGc.jpg",
-    "time": 22
+    "time": 22,
+    "follow": true
   },
   {
     "id": 8,
     "userName": "__yum_s",
     "name": "크리스탈",
     "image": "https://photo-cdn2.icons8.com/f_TnFr-C592GoK7BkQ7fNREtTbjj_O73NWzOjlSCHfg/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTkxLzZhYmQw/ZTk3LTliOGItNGM5/Mi05ZGI4LTcxMmQ1/MjNlYTFlOS5qcGc.jpg",
-    "time": 3
+    "time": 3,
+    "follow": true
   },
   {
     "id": 9,
     "userName": "mat.eat.zzi",
     "name": "맛있지",
     "image": "https://photo-cdn2.icons8.com/JAOB9Wk8oxFyaOXN6HsJuAByNyJ3mSkuAEP7lp0mPx0/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTg2L2MzMjA1/NWQxLWVjMWEtNDk1/NS1iN2Q0LTMxODBi/ZGUxNzdhZi5qcGc.jpg",
-    "time": 27
+    "time": 27,
+    "follow": true
+  },
+  {
+    "id": 10,
+    "userName": "applepie",
+    "name": "애플파이🍏",
+    "image": "https://cdn.pixabay.com/photo/2020/05/17/20/21/cat-5183427__480.jpg",
+    "time": 58,
+    "follow": true
+  },
+  {
+    "id": 11,
+    "userName": "lee__90",
+    "name": "이미미",
+    "image": "https://cdn.pixabay.com/photo/2018/02/20/20/52/people-3168830_1280.jpg",
+    "time": 30,
+    "follow": true
+  },
+  {
+    "id": 12,
+    "userName": "joonsikyang",
+    "name": "양준식",
+    "image": "https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__480.png",
+    "time": 21,
+    "follow": true
+  },
+  {
+    "id": 13,
+    "userName": "codekunst",
+    "name": "코드쿤스트👀",
+    "image": "https://cdn.pixabay.com/photo/2016/10/24/04/23/baby-1765356__480.jpg",
+    "time": 36,
+    "follow": false
+  },
+  {
+    "id": 14,
+    "userName": "jayPark",
+    "name": "J.Park🙏",
+    "image": "https://cdn.pixabay.com/photo/2021/01/14/20/00/girl-5917784__480.jpg",
+    "time": 37,
+    "follow": true
+  },
+  {
+    "id": 15,
+    "userName": "unnie_s_2022",
+    "name": "언니들.2022",
+    "image": "https://photo-cdn2.icons8.com/LqNg9jtI8PjfmQU8ZHl_pBwx8yxeESbTpmbePrbUQKA/rs:fit:1608:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvMTc2LzExMDU1/ZDZlLTQyMWItNGM3/ZC04YjczLWRiZWM0/ZmFiYmFhMS5qcGc.jpg",
+    "time": 41,
+    "follow": false
+  },
+  {
+    "id": 16,
+    "userName": "mizineee",
+    "name": "미지니",
+    "image": "https://photo-cdn2.icons8.com/CY-anxzK_EfsUIvPlYT9PSnb7rxEcVHJ8YBquZTbbdI/rs:fit:1606:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvOTI0L2Y5ZTc5/ODgxLTNmZDQtNDVm/Ni05YTRlLTczMzhk/MmQ4OTc4MS5qcGc.jpg",
+    "time": 47,
+    "follow": false
+  },
+  {
+    "id": 17,
+    "userName": "jeong_1",
+    "name": "정하나",
+    "image": "https://photo-cdn2.icons8.com/XdKmZyDnJVDgF4L5VIVkHfjzO1y0geJOYGm343_vgXk/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvODk1L2RmOWYw/OWE5LTQwZDMtNDkz/ZS1hMzI5LWUyY2Jh/ZTViNDA4ZC5qcGc.jpg",
+    "time": 57,
+    "follow": false
   }
 ]

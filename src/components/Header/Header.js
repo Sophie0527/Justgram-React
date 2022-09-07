@@ -39,6 +39,7 @@ function Header() {
   const openSearchModal = () => {
     if (!searchOpen) {
       setSearchOpen(true);
+      setInputSearch('');
     } else {
       setSearchOpen(false);
     }
@@ -50,6 +51,7 @@ function Header() {
       setProfileOpen(false);
     } else if (searchOpen) {
       setSearchOpen(false);
+      setInputSearch('');
     }
   };
 
@@ -57,11 +59,7 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <Container
-      onClick={() => {
-        closeModal();
-      }}
-    >
+    <Container onClick={closeModal}>
       <SearchModal
         users={users}
         searchOpen={searchOpen}
@@ -178,12 +176,14 @@ const InputBox = styled.div`
     border: none;
     outline: none;
     font-size: 15px;
+    cursor: pointer;
     ${CustomMediaStyle.lessThan('mobile')`
       width: 150px;
 	`}
   }
   img {
     width: 20px;
+    cursor: pointer;
   }
 `;
 

@@ -17,13 +17,16 @@ function HomeRightBox() {
       });
   }, [setUsers]);
 
-  // 모두보기 글자 클릭 시 Container의 max-height: 100%로 변경
+  // 모두보기 글자 클릭 시, Container의 max-height: 100%로 변경하고 줄여보기로 변경.
   const [all, setAll] = useState(false);
+  const [watchAll, setWatchAll] = useState('모두보기');
   const btnClick = () => {
     if (!all) {
       setAll(true);
+      setWatchAll('줄여보기');
     } else {
       setAll(false);
+      setWatchAll('모두보기');
     }
   };
 
@@ -31,7 +34,7 @@ function HomeRightBox() {
     <Container className={all ? 'active' : 'inactive'}>
       <StoryBoxHeader>
         <span>스토리</span>
-        <p onClick={btnClick}>모두보기</p>
+        <p onClick={btnClick}>{watchAll}</p>
       </StoryBoxHeader>
       <StoryBoxInfoWrap>
         {users
