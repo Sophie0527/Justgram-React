@@ -16,13 +16,16 @@ function Rcommended() {
       });
   }, [setUsers]);
 
-  // 모두보기 글자 클릭 시 Container의 max-height: 100%로 변경
+  // 모두보기 글자 클릭 시, Container의 max-height: 100%로 변경하고 줄여보기로 변경.
   const [all, setAll] = useState(false);
+  const [watchAll, setWatchAll] = useState('모두보기');
   const btnClick = () => {
     if (!all) {
       setAll(true);
+      setWatchAll('줄여보기');
     } else {
       setAll(false);
+      setWatchAll('모두보기');
     }
   };
 
@@ -30,7 +33,7 @@ function Rcommended() {
     <Container className={all ? 'active' : 'inactive'}>
       <RcommendedBoxHeader>
         <span>회원님을 위한 추천</span>
-        <p onClick={btnClick}>모두보기</p>
+        <p onClick={btnClick}>{watchAll}</p>
       </RcommendedBoxHeader>
       <RcommendedBoxInfoWrap>
         {users
@@ -101,7 +104,6 @@ const RcommendedBoxInfo = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
-  /* width: 100%; */
   button:hover {
     color: #a0a0a0;
   }
