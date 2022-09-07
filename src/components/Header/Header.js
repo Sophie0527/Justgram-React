@@ -107,7 +107,12 @@ function Header() {
               .filter(user => user.id === 7)
               .map(user => {
                 return (
-                  <img key={user.id} alt="마이페이지" src={user.image}></img>
+                  <img
+                    className={profileOpen ? 'active' : 'inactive'}
+                    key={user.id}
+                    alt="마이페이지"
+                    src={user.image}
+                  ></img>
                 );
               })}
           </ProfileIcon>
@@ -198,6 +203,9 @@ const ProfileIcon = styled.div`
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #dbdbdb;
+    &.active {
+      border: 2px solid black;
+    }
   }
 `;
 

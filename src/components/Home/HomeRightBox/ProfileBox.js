@@ -33,18 +33,14 @@ const Container = styled.div`
     border: 1px solid #dbdbdb;
     margin: 0 10px;
   }
-  div {
-    flex-direction: column;
-    align-items: center;
-    span {
-      font-size: 15px;
-      font-weight: 500;
-    }
-    p {
-      font-size: 14px;
-      color: #a0a0a0;
-      padding-top: 5px;
-    }
+  span {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 14px;
+    color: #a0a0a0;
+    padding-top: 5px;
   }
 `;
 

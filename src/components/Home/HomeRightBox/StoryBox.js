@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function HomeRightBox() {
+  // user의 목데이터를 fetch하여 users 배열에 담기
+  // user의 time이 30보다 작을 경우로 filter하고 mapingp하여 보여주기
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -15,11 +17,21 @@ function HomeRightBox() {
       });
   }, [setUsers]);
 
+  // 모두보기 글자 클릭 시 Container의 max-height: 100%로 변경
+  const [all, setAll] = useState(false);
+  const btnClick = () => {
+    if (!all) {
+      setAll(true);
+    } else {
+      setAll(false);
+    }
+  };
+
   return (
-    <Container>
+    <Container className={all ? 'active' : 'inactive'}>
       <StoryBoxHeader>
         <span>스토리</span>
-        <p>모두보기</p>
+        <p onClick={btnClick}>모두보기</p>
       </StoryBoxHeader>
       <StoryBoxInfoWrap>
         {users
@@ -52,6 +64,9 @@ const Container = styled.div`
   padding: 13px 13px;
   margin-bottom: 10px;
   max-height: 200px;
+  &.active {
+    max-height: 100%;
+  }
   ${CustomMediaStyle.lessThan('tablet')`
   padding: 13px 0px;
   margin: -30px 10px 10px 10px;
@@ -79,6 +94,9 @@ const StoryBoxHeader = styled.div`
   align-items: center;
   width: 100%;
   padding-bottom: 10px;
+  p:hover {
+    color: #a0a0a0;
+  }
   ${CustomMediaStyle.lessThan('tablet')`
   display: none;
 	`}
@@ -90,6 +108,7 @@ const StoryBoxHeader = styled.div`
   p {
     font-size: 15px;
     font-weight: 450;
+    cursor: pointer;
   }
 `;
 
