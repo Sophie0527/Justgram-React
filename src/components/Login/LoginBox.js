@@ -7,15 +7,32 @@ function LoginBox() {
 
   // ID, PW state로, 기본값은 빈string으로 하고 input창에 입력되는 onChange이밴트로 setStae 변화주기.
   const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
-
-  // ID, PW 조건 (id: @ 포함, PW: 5자 이상) validation.
-  const validation = (id, pw) => {
-    if (!id.includes('@') || pw.length < 5) {
-      return false;
-    }
-    return true;
+  const idOnChange = e => {
+    setId(e.target.value);
   };
+
+  const [pw, setPw] = useState('');
+  const pwOnChange = e => {
+    setPw(e.target.value);
+  };
+
+  // ID, PW 정규식
+  const regEmail = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  const regPw =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
+
+  // ID, PW 조건 (id:이메일 형식 && PW:최소8자 최대 10자, 하나 이상의 숫자와 하나이상의 특수문자 포함).
+  const validation = (id, pw) => {
+    if (
+      regEmail.test(id) &&
+      !/[0-9]/g.test(id.split('.')[1]) &&
+      regPw.test(pw)
+    ) {
+      return true;
+    }
+    return false;
+  };
+
   const valid = validation(id, pw);
 
   // 버튼 클릭 시, alert창 띄운 후 home으로 이동.
@@ -33,17 +50,13 @@ function LoginBox() {
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           value={id}
-          onChange={e => {
-            setId(e.target.value);
-          }}
+          onChange={idOnChange}
         />
         <input
           type="password"
           placeholder="비밀번호"
           value={pw}
-          onChange={e => {
-            setPw(e.target.value);
-          }}
+          onChange={pwOnChange}
         />
         <button
           className={valid ? 'active' : 'inactive'}
