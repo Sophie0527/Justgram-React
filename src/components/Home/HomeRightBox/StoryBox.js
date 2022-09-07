@@ -157,6 +157,11 @@ const StoryprofileBox = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
+  cursor: pointer;
+  img:hover {
+    transform: rotate(360deg);
+    transition-duration: 2s;
+  }
   img {
     width: 45px;
     height: 45px;

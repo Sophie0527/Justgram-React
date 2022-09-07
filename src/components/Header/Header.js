@@ -145,6 +145,9 @@ const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  span:hover {
+    color: #565656;
+  }
   ${CustomMediaStyle.lessThan('tablet')`
     width: 600px;
 	  `}
@@ -196,6 +199,10 @@ const Icon = styled.img`
 
 const ProfileIcon = styled.div`
   padding: 0 6px;
+  img:hover {
+    transform: rotate(360deg);
+    transition-duration: 2s;
+  }
   img {
     width: 32px;
     height: 32px;
