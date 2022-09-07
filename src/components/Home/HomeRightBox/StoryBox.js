@@ -60,17 +60,17 @@ const Container = styled.div`
   align-items: center;
   background-color: white;
   border: 1px solid #dbdbdb;
-  border-radius: 3px;
-  padding: 13px 13px;
+  border-radius: 8px;
+  padding: 13px;
   margin-bottom: 10px;
   max-height: 200px;
   &.active {
     max-height: 100%;
   }
   ${CustomMediaStyle.lessThan('tablet')`
-  padding: 13px 0px;
-  margin: -30px 10px 10px 10px;
-`}
+    padding: 13px 0px;
+    margin: -30px 10px 10px;
+  `}
 `;
 
 const StoryBoxInfoWrap = styled.div`
@@ -78,10 +78,10 @@ const StoryBoxInfoWrap = styled.div`
   overflow: auto;
   white-space: nowrap;
   ${CustomMediaStyle.lessThan('tablet')`
-  display: flex;
-  justify-content: left;
-  width: 614px;
-  height: 110px;
+    display: flex;
+    justify-content: left;
+    width: 600px;
+    height: 110px;
 `}
   ${CustomMediaStyle.lessThan('mobile')`
     width: 470px;
@@ -98,7 +98,7 @@ const StoryBoxHeader = styled.div`
     color: #a0a0a0;
   }
   ${CustomMediaStyle.lessThan('tablet')`
-  display: none;
+    display: none;
 	`}
   span {
     font-size: 15px;
@@ -126,13 +126,14 @@ const StoryBoxInfo = styled.div`
     width: 90px;
 	`}
   div {
+    cursor: pointer;
     span {
       font-size: 15px;
       font-weight: 500;
       ${CustomMediaStyle.lessThan('tablet')`
-      font-size: 11px;
-      font-weight: 400;
-`}
+        font-size: 11px;
+        font-weight: 400;
+      `}
     }
     p {
       font-size: 14px;
@@ -146,17 +147,14 @@ const StoryBoxInfo = styled.div`
 `;
 
 const StoryprofileBox = styled.div`
+  display: flex;
+  margin: 5px 10px 5px 5px;
   border: 4px solid transparent;
   border-radius: 50px;
   background-image: linear-gradient(white, white),
     linear-gradient(to right, red 0%, orange 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  margin: 5px 10px 5px 5px;
-  border-image-slice: 1;
-  display: flex;
-  justify-content: left;
-  align-items: center;
   cursor: pointer;
   img:hover {
     transform: rotate(360deg);

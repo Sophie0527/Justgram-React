@@ -108,6 +108,9 @@ const RcommendedBoxInfo = styled.div`
   justify-content: left;
   align-items: center;
   width: 100%;
+  button:hover {
+    color: #a0a0a0;
+  }
   img {
     width: 50px;
     height: 50px;
@@ -136,6 +139,7 @@ const RcommendedBoxInfo = styled.div`
     color: #0095f6;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
   }
 `;
 
