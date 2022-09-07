@@ -88,7 +88,6 @@ const UserInfo = styled.div`
   justify-content: left;
   align-items: center;
   padding: 10px 20px;
-  width: 100%;
 `;
 
 const UserImg = styled.div`
