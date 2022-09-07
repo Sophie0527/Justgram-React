@@ -81,69 +81,67 @@ function FeedText(props) {
   //
 
   return (
-    <>
-      <Container>
-        <IconBox>
-          <div>
-            <FontAwesomeIcon
-              color={like ? 'tomato' : 'black'}
-              icon={like ? faHeartCircleCheck : faHeart}
-              alt="하트"
-              onClick={() => {
-                isLiked();
-              }}
-            />
-            <FontAwesomeIcon icon={faMessage} alt="메세지" />
-            <FontAwesomeIcon icon={faCircleDown} alt="저장" />
-          </div>
-          <FontAwesomeIcon icon={faBookmark} alt="북마크" />
-        </IconBox>
-        <LikesBox>
-          <img alt="좋아요프로필" src={feeds[num].likeUser.image}></img>
-          <span>
-            {feeds[num].likeUser.name}님 외 {feeds[num].likeUser.likes}명이
-            좋아합니다
-          </span>
-        </LikesBox>
-        <FeedContents>
-          <span>{feeds[num].user.name}</span>
-          <p>{feedContent}</p>
-          {modalOpen ? (
-            <button
-              id="btn"
-              onClick={() => {
-                closeModal();
-              }}
-            >
-              ・・・ 더 보기
-            </button>
-          ) : null}
-        </FeedContents>
+    <Container>
+      <IconBox>
+        <div>
+          <FontAwesomeIcon
+            color={like ? 'tomato' : 'black'}
+            icon={like ? faHeartCircleCheck : faHeart}
+            alt="하트"
+            onClick={() => {
+              isLiked();
+            }}
+          />
+          <FontAwesomeIcon icon={faMessage} alt="메세지" />
+          <FontAwesomeIcon icon={faCircleDown} alt="저장" />
+        </div>
+        <FontAwesomeIcon icon={faBookmark} alt="북마크" />
+      </IconBox>
+      <LikesBox>
+        <img alt="좋아요프로필" src={feeds[num].likeUser.image}></img>
+        <span>
+          <p>{feeds[num].likeUser.name}</p>님 외{' '}
+          <p>{feeds[num].likeUser.likes}</p>명이 좋아합니다.
+        </span>
+      </LikesBox>
+      <FeedContents>
+        <span>{feeds[num].user.name}</span>
+        <p>{feedContent}</p>
+        {modalOpen ? (
+          <More
+            id="btn"
+            onClick={() => {
+              closeModal();
+            }}
+          >
+            ... 더 보기
+          </More>
+        ) : null}
+      </FeedContents>
 
-        {feeds[num].commentList?.map((a, i) => {
-          return (
-            <ReviewContents key={i}>
-              <div>
-                <span>{a.name}</span>
-                <p>{a.content}</p>
-              </div>
-              <div>
-                <Delete
-                  onClick={() => {
-                    deleteComment(i);
-                  }}
-                >
-                  삭제
-                </Delete>
-                <HeartButton onClick={() => onClickLikeBtn(i)} type="button">
-                  {isLikedBtn(a)}
-                </HeartButton>
-              </div>
-            </ReviewContents>
-          );
-        })}
-        <Time>42분 전</Time>
-      </Container>
+      {feeds[num].commentList?.map((a, i) => {
+        return (
+          <ReviewContents key={i}>
+            <div>
+              <span>{a.name}</span>
+              <p>{a.content}</p>
+            </div>
+            <div>
+              <Delete
+                onClick={() => {
+                  deleteComment(i);
+                }}
+              >
+                삭제
+              </Delete>
+              <HeartButton onClick={() => onClickLikeBtn(i)} type="button">
+                {isLikedBtn(a)}
+              </HeartButton>
+            </div>
+          </ReviewContents>
+        );
+      })}
+      <Time>42분 전</Time>
       <InputContainer>
         <input
           placeholder="댓글 달기..."
@@ -174,22 +172,23 @@ function FeedText(props) {
           게시
         </button>
       </InputContainer>
-    </>
+    </Container>
   );
 }
 
 const Container = styled.div`
-  width: 100%;
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  width: 614px;
+  ${CustomMediaStyle.lessThan('mobile')`
+  width: 500px;
+	`}
 `;
 
 const IconBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 10px 0;
+  padding: 10px 20px;
   div {
     display: flex;
     justify-content: center;
@@ -197,14 +196,13 @@ const IconBox = styled.div`
     svg {
       width: 20px;
       height: 20px;
-      margin-right: -8px;
+      padding-right: 10px;
       cursor: pointer;
     }
   }
   svg {
     width: 20px;
     height: 20px;
-    margin: 0 20px;
     cursor: pointer;
   }
 `;
@@ -219,11 +217,15 @@ const LikesBox = styled.div`
     height: 23px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #dbdbdb;
+    border: 2px solid #dbdbdb;
   }
   span {
+    display: flex;
     font-size: 14px;
     padding-left: 7px;
+    p {
+      font-weight: 600;
+    }
   }
 `;
 
@@ -231,43 +233,42 @@ const FeedContents = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: 5px 20px;
+  padding: 5px 20px 10px;
   span {
     font-size: 14px;
     padding-left: 7px;
-    font-weight: 500;
+    font-weight: 600;
   }
   p {
     font-size: 14px;
     padding-left: 7px;
   }
-  button {
-    border: none;
-    background-color: white;
-    font-size: 14px;
-    padding-left: 7px;
-    color: #a0a0a0;
-    cursor: pointer;
-  }
+`;
+
+const More = styled.p`
+  font-size: 14px;
+  padding-left: 7px;
+  color: #a0a0a0;
+  cursor: pointer;
+  font-weight: 500;
 `;
 
 const ReviewContents = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px 3px;
+  padding: 0px 20px 5px;
   div {
     display: flex;
     justify-content: left;
-    align-items: center;
     span {
       font-size: 14px;
       padding-left: 7px;
-      font-weight: 500;
+      font-weight: 600;
     }
     p {
       font-size: 14px;
       padding-left: 7px;
+      letter-spacing: 1px;
     }
   }
   svg {
@@ -277,6 +278,7 @@ const ReviewContents = styled.div`
 `;
 
 const Delete = styled.p`
+  width: 30px;
   padding-right: 7px;
   font-size: 12px;
   cursor: pointer;
@@ -287,6 +289,7 @@ const HeartButton = styled.button`
   border: none;
   background-color: white;
   margin-left: -5px;
+  display: flex;
 `;
 
 const Time = styled.span`
@@ -294,23 +297,24 @@ const Time = styled.span`
   font-size: 14px;
   color: #a0a0a0;
 `;
-//
+
 const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 15px 0;
+  margin-top: 15px;
+  padding: 10px 0;
+  border-top: 1px solid #dbdbdb;
   input {
     padding-left: 27px;
     font-size: 16px;
-    font-weight: 450;
+    font-weight: 500;
     width: 500px;
     border: none;
     outline: none;
     ${CustomMediaStyle.lessThan('mobile')`
-  width: 400px;
-	`}
+      width: 400px;
+  	`}
   }
   button {
     border: none;

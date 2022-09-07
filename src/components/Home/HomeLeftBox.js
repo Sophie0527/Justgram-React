@@ -5,6 +5,7 @@ import FeedText from './HomeLeftBox/FeedText';
 import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function HomeLeftBox() {
+  // 목데이터를 fetch하여 data 배열에 담기
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
@@ -33,19 +34,13 @@ function HomeLeftBox() {
 }
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 0 10px;
 `;
 
 const Feeds = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: white;
   border: 1px solid #dbdbdb;
-  border-radius: 3px;
+  border-radius: 8px;
   margin-bottom: 20px;
 `;
 
