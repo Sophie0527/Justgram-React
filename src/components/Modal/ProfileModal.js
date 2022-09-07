@@ -121,7 +121,7 @@ const LogoutBox = styled.div`
   align-items: center;
   padding: 12px 20px;
   cursor: pointer;
-  border-top: 1px solid black;
+  border-top: 1.5px solid #dbdbdb;
 
   span {
     font-size: 16px;

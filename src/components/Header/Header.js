@@ -176,12 +176,14 @@ const InputBox = styled.div`
     border: none;
     outline: none;
     font-size: 15px;
+    cursor: pointer;
     ${CustomMediaStyle.lessThan('mobile')`
       width: 150px;
 	`}
   }
   img {
     width: 20px;
+    cursor: pointer;
   }
 `;
 
