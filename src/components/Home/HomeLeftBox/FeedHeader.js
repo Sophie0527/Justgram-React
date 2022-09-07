@@ -24,13 +24,12 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 10px 0;
   div {
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 0 10px;
+    cursor: pointer;
     img {
       width: 40px;
       height: 40px;
@@ -46,6 +45,7 @@ const Container = styled.div`
   img {
     margin-right: 10px;
     width: 20px;
+    cursor: pointer;
   }
 `;
 

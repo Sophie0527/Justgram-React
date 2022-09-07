@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CustomMediaStyle } from '../../../styles/CustomMediaStyle';
 
 function Rcommended() {
+  // 모두보기 글자 클릭 시 Container의 max-height: 100%로 변경
+  const [all, setAll] = useState(false);
+  const btnClick = () => {
+    if (!all) {
+      setAll(true);
+    } else {
+      setAll(false);
+    }
+  };
+
   return (
-    <Container>
+    <Container className={all ? 'active' : 'inactive'}>
       <RcommendedBoxHeader>
         <span>회원님을 위한 추천</span>
-        <p>모두보기</p>
+        <p onClick={btnClick}>모두보기</p>
       </RcommendedBoxHeader>
       <RcommendedBoxInfoWrap>
         <RcommendedBoxInfo>
@@ -57,6 +67,9 @@ const Container = styled.div`
   border-radius: 3px;
   padding: 13px 13px;
   max-height: 200px;
+  &.active {
+    max-height: 100%;
+  }
   ${CustomMediaStyle.lessThan('tablet')`
   display: none;
 	`}
@@ -74,6 +87,9 @@ const RcommendedBoxHeader = styled.div`
   align-items: center;
   width: 100%;
   padding-bottom: 10px;
+  p:hover {
+    color: #a0a0a0;
+  }
 
   span {
     font-size: 15px;
@@ -83,6 +99,7 @@ const RcommendedBoxHeader = styled.div`
   p {
     font-size: 15px;
     font-weight: 450;
+    cursor: pointer;
   }
 `;
 
@@ -91,6 +108,9 @@ const RcommendedBoxInfo = styled.div`
   justify-content: left;
   align-items: center;
   width: 100%;
+  button:hover {
+    color: #a0a0a0;
+  }
   img {
     width: 50px;
     height: 50px;
@@ -119,6 +139,7 @@ const RcommendedBoxInfo = styled.div`
     color: #0095f6;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
   }
 `;
 

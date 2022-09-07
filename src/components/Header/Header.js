@@ -107,7 +107,12 @@ function Header() {
               .filter(user => user.id === 7)
               .map(user => {
                 return (
-                  <img key={user.id} alt="마이페이지" src={user.image}></img>
+                  <img
+                    className={profileOpen ? 'active' : 'inactive'}
+                    key={user.id}
+                    alt="마이페이지"
+                    src={user.image}
+                  ></img>
                 );
               })}
           </ProfileIcon>
@@ -140,6 +145,9 @@ const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  span:hover {
+    color: #565656;
+  }
   ${CustomMediaStyle.lessThan('tablet')`
     width: 600px;
 	  `}
@@ -191,6 +199,10 @@ const Icon = styled.img`
 
 const ProfileIcon = styled.div`
   padding: 0 6px;
+  img:hover {
+    transform: rotate(360deg);
+    transition-duration: 2s;
+  }
   img {
     width: 32px;
     height: 32px;
@@ -198,6 +210,9 @@ const ProfileIcon = styled.div`
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #dbdbdb;
+    &.active {
+      border: 2px solid black;
+    }
   }
 `;
 
