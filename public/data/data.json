@@ -5,12 +5,43 @@
       "name": "sophie0527",
       "image": "https://photo-cdn2.icons8.com/SYIu_ZIL0mGfZdevQ6s5QZXlo3d1JFIDsuiTNYoiQ4Q/rs:fit:716:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNTM1L2I3Zjk4/YzBhLTg2NWUtNDYz/My04YmE5LTdjMzQx/MWIxODE1OC5qcGc.jpg"
     },
-    "feedImage": "https://cdn.pixabay.com/photo/2016/11/22/19/10/architecture-1850092_1280.jpg",
+    "feedImage": "https://photo-cdn2.icons8.com/HkhkWo5xsmPiV5jYUK4TNSTrwreIH7vYV0rW7QHDC94/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi80NzQ3YmJiMGFi/Y2I0OWE0OTEzMDM3/MzRjYmJmZDQ3OC5q/cGc.jpg",
     "isLiked": false,
     "likeUser": {
       "name": "Ted_88",
       "image": "https://photo-cdn2.icons8.com/KQG1tldVmhm7k1T2FRi1KCXBzBwEe_fhtw4VETFPZRM/rs:fit:714:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvNDg2LzBjNjY0/OGIwLTc5NTgtNDU0/My05YjI2LWQ4ODE3/M2RjMTlmZS5qcGc.jpg",
       "likes": 30
+    },
+    "date": "2022-05-27 18:41",
+    "content": "저의 베스킨라빈스 최애는 아몬드봉봉입니다!!",
+    "commentList": [
+      {
+        "id": 1,
+        "name": "jayPark",
+        "content": "looks so delicious😋",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "name": "applepie",
+        "content": "내 최애는 ✨슈팅스타🍦✨",
+        "isLiked": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user": {
+      "name": "dearandmood88",
+      "image": "https://images.unsplash.com/photo-1653507295257-dd9f52b4ecdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+    },
+
+    "feedImage": "https://cdn.pixabay.com/photo/2016/11/22/19/10/architecture-1850092_1280.jpg",
+    "isLiked": true,
+    "likeUser": {
+      "name": "love_sori",
+      "image": "https://images.unsplash.com/photo-1653571764536-0871291303f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
+      "likes": 48
     },
     "date": "2022-05-27 18:41",
     "content": "오늘은 미술관 가는 날",
@@ -25,18 +56,18 @@
         "id": 2,
         "name": "applepie",
         "content": "beautiful world!",
-        "isLiked": true
+        "isLiked": false
       },
       {
         "id": 3,
         "name": "lee__90",
         "content": "justcode bootcamp",
-        "isLiked": true
+        "isLiked": false
       }
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "user": {
       "name": "humor.dooly",
       "image": "https://cdn.pixabay.com/photo/2021/05/23/00/21/woman-6274879_1280.png"
@@ -67,36 +98,6 @@
         "id": 3,
         "name": "codekunst",
         "content": "Nice to meet you",
-        "isLiked": true
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "user": {
-      "name": "dearandmood88",
-      "image": "https://images.unsplash.com/photo-1653507295257-dd9f52b4ecdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
-    },
-    "feedImage": "https://photo-cdn2.icons8.com/HkhkWo5xsmPiV5jYUK4TNSTrwreIH7vYV0rW7QHDC94/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi80NzQ3YmJiMGFi/Y2I0OWE0OTEzMDM3/MzRjYmJmZDQ3OC5q/cGc.jpg",
-    "isLiked": true,
-    "likeUser": {
-      "name": "love_sori",
-      "image": "https://images.unsplash.com/photo-1653571764536-0871291303f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
-      "likes": 48
-    },
-    "date": "2022-05-27 18:41",
-    "content": "저의 베스킨라빈스 최애는 아몬드봉봉입니다!!",
-    "commentList": [
-      {
-        "id": 1,
-        "name": "jayPark",
-        "content": "Hey.",
-        "isLiked": false
-      },
-      {
-        "id": 2,
-        "name": "applepie",
-        "content": "beautiful world!",
         "isLiked": true
       }
     ]
