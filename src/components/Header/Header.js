@@ -79,15 +79,20 @@ function Header() {
         >
           Justgram
         </LogoBox>
-        <InputBox
-          onClick={openSearchModal}
-          placeholder="검색"
-          value={inputSearch}
-          type="text"
-          onChange={e => {
-            setInputSearch(e.target.value);
-          }}
-        ></InputBox>
+        <InputBox onClick={openSearchModal}>
+          <img
+            alt="검색"
+            src="https://img.icons8.com/small/344/search--v1.png"
+          ></img>
+          <input
+            placeholder="검색"
+            value={inputSearch}
+            type="text"
+            onChange={e => {
+              setInputSearch(e.target.value);
+            }}
+          ></input>
+        </InputBox>
         <IconBox>
           <Icon
             alt="탐색"
@@ -149,19 +154,29 @@ const LogoBox = styled.span`
   font-family: 'DM Serif Display', serif;
 `;
 
-const InputBox = styled.input`
+const InputBox = styled.div`
   width: 268px;
-  height: 36px;
   ${HorizAlign}
-  text-align: center;
-  border: 0px;
   border-radius: 8px;
-  outline: none;
   background-color: #efefef;
-  font-size: 15px;
   ${CustomMediaStyle.lessThan('mobile')`
       width: 220px;
 	`}
+  input {
+    width: 200px;
+    height: 36px;
+    padding-left: 10px;
+    background-color: #efefef;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    ${CustomMediaStyle.lessThan('mobile')`
+      width: 150px;
+	`}
+  }
+  img {
+    width: 20px;
+  }
 `;
 
 const IconBox = styled.div`
