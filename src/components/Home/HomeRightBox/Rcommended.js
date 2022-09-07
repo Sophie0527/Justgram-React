@@ -48,7 +48,7 @@ function Rcommended() {
             src="https://photo-cdn2.icons8.com/XdKmZyDnJVDgF4L5VIVkHfjzO1y0geJOYGm343_vgXk/rs:fit:715:1072/wm:1:re:0:0:0.65/wmid:moose/q:98/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvODk1L2RmOWYw/OWE5LTQwZDMtNDkz/ZS1hMzI5LWUyY2Jh/ZTViNDA4ZC5qcGc.jpg"
           ></img>
           <div>
-            <span>jeong</span>
+            <span>jeong_1</span>
             <p>__yum_s님이 팔로우합니다</p>
           </div>
           <button>팔로우</button>
