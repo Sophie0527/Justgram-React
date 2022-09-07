@@ -6,12 +6,14 @@ const SearchModal = props => {
 
   return (
     <Container searchOpen={searchOpen}>
+      {/* 모달창이 열리면: SearchBox를 보여주기 ? null */}
       {searchOpen ? (
         <SearchBox>
           <img
             src="https://cdn.ggumim.co.kr/storage/20211118152728RO3OXnhkrC.png"
             alt="세모아이콘"
           />
+          {/* input창의 text가 입력되지 않으면: 찾으시는 아이디를 입력해주세요. ? 해당 users 정보 보여주기 */}
           {inputSearch === '' ? (
             <UserBox>
               <NoneUser>
@@ -88,7 +90,6 @@ const UserInfo = styled.div`
   justify-content: left;
   align-items: center;
   padding: 10px 20px;
-  width: 100%;
 `;
 
 const UserImg = styled.div`
