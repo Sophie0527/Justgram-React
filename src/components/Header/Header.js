@@ -39,6 +39,7 @@ function Header() {
   const openSearchModal = () => {
     if (!searchOpen) {
       setSearchOpen(true);
+      setInputSearch('');
     } else {
       setSearchOpen(false);
     }
@@ -50,6 +51,7 @@ function Header() {
       setProfileOpen(false);
     } else if (searchOpen) {
       setSearchOpen(false);
+      setInputSearch('');
     }
   };
 
@@ -57,11 +59,7 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <Container
-      onClick={() => {
-        closeModal();
-      }}
-    >
+    <Container onClick={closeModal}>
       <SearchModal
         users={users}
         searchOpen={searchOpen}
