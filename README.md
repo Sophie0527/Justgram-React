@@ -2,8 +2,8 @@
 
 소셜 네트워크 서비스(SNS) [instagram](https://www.instagram.com/) 클론하는 프로젝트
 <br>
-
 - instagram에서 login & home 컴포넌트 구현하기
+
   <img width="350" alt="인스타그램" src="https://cdn.pixabay.com/photo/2018/03/28/02/19/illustration-3268055_1280.jpg">
 
 ## Introduction
