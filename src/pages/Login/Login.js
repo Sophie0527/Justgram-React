@@ -6,13 +6,11 @@ import Footer from '../../components/Footer/Footer';
 
 function Login() {
   return (
-    <>
-      <Container>
-        <LoginBox />
-        <LoginBottomBox />
-        <Footer />
-      </Container>
-    </>
+    <Container>
+      <LoginBox />
+      <LoginBottomBox />
+      <Footer />
+    </Container>
   );
 }
 
